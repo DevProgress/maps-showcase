@@ -16,6 +16,10 @@
     <!-- https://github.com/Haixing-Hu/bootstrap3-ie10-viewport-bug-workaround -->
     <link href="vendor/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
+    <script src="vendor/jquery-3.1.0.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/modalController.js"></script>
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="vendor/html5shiv.min.js"></script>
@@ -29,9 +33,19 @@
   <body>
     <div class='container-fluid'>
       <div class='row'>
-        <a href='map.html' style='float:left'>View Map</a>
-        <img src='img/static-photo-video.png' style='width:100%' />
+        <div id="mainModal" class="modal fade" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+
+                <img src='img/static-photo-video.png' style='width:100%' />
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal --> 
+        
       </div>
+      <script> $("#mainModal").modal();  </script>
       <div class='middle-gray-bar row'>
         <div class='middle-title col-sm-2'>
           Join women <br /> for Hillary
