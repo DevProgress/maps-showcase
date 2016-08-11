@@ -1,3 +1,81 @@
+@-moz-keyframes loading-pulse {
+  0% {
+    opacity: .2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .2;
+  }
+}
+@-webkit-keyframes loading-pulse {
+  0% {
+    opacity: .2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .2;
+  }
+}
+@-o-keyframes loading-pulse {
+  0% {
+    opacity: .2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .2;
+  }
+}
+@keyframes loading-pulse {
+  0% {
+    opacity: .2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .2;
+  }
+}
+
+@-moz-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .background {
   fill: none;
   pointer-events: all;
@@ -25,6 +103,22 @@
   background: #fff;
   color: #888;
   line-height: 500px;
-  font-size: 60px;
+  font-size: 36px;
   text-align: center;
+}
+
+#map-container .loading-message {
+  webkit-animation: loading-pulse 2s infinite;
+  moz-animation: loading-pulse 2s infinite;
+  o-animation: loading-pulse 2s infinite;
+  ms-animation: loading-pulse 2s infinite;
+  animation: loading-pulse 2s infinite;
+}
+
+#map-container svg {
+  webkit-animation: fade-in .5s;
+  moz-animation: fade-in .5s;
+  o-animation: fade-in .5s;
+  ms-animation: fade-in .5s;
+  animation: fade-in .5s;
 }
