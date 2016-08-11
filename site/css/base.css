@@ -1,0 +1,55 @@
+/* Styles for middle strip of page just below the splash */
+.middle-gray-bar {
+  background-color: lightgray;
+}
+
+.middle-gray-bar .middle-title {
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.middle-gray-bar .margin-width {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.middle-gray-bar .margin-width input {
+  max-width: 80px;
+}
+
+.middle-gray-bar .margin-width span {
+  font-weight: bold;
+}
+
+.middle-gray-bar .margin-width button {
+  margin-top: 15px;
+}
+
+/* Styles for bottom strip of page */
+.bottom-gray-bar {
+  background-color: gray;
+}
+
+.bottom-gray-bar .bottom-title {
+  color: white;
+  font-weight: bold;
+}
+
+.bottom-gray-bar .bottom-paragraph {
+   color: white;
+}
+
+.bottom-gray-bar .padded-half {
+  padding-left:10%;
+  padding-right:10%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/* Modal CSS */
+
+.modal-dialog {
+  width: 70%;
+}

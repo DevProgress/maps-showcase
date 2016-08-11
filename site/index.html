@@ -1,0 +1,102 @@
+<html>
+
+  <head>
+    <!-- This header content from https://getbootstrap.com/examples/grid/ -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="Map Showcase - Join Hillary">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Map Showcase - Join Hillary - Map Screen</title>
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
+    <script src="vendor/jquery-3.1.0.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!-- https://github.com/Haixing-Hu/bootstrap3-ie10-viewport-bug-workaround -->
+    <link href="vendor/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="vendor/html5shiv.min.js"></script>
+      <script src="vendor/respond.min.js"></script>
+    <![endif]-->
+
+    <link href="/css/base.css" rel="stylesheet">
+    <link href="/css/map.css" rel="stylesheet">
+
+    <script src="//d3js.org/d3.v3.min.js"></script>
+    <script src="//d3js.org/topojson.v1.min.js"></script>
+
+
+  </head>
+
+  <body>
+    <div class='container-fluid'>
+      <div class='row'>
+
+        <div id="mainModal" class="modal fade" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <img src='img/static-photo-video.png' style='width:100%' />
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div>
+        </div><!-- /.modal -->
+
+        <div id='map-container'>
+          <div class='loading-message'>Loading...</div>
+        </div>
+      </div>
+      <div class='middle-gray-bar row'>
+        <div class='middle-title col-sm-2'>
+          Join women <br /> for Hillary
+        </div>
+        <div class='margin-width col-sm-1'>
+          <span>Label</span>
+          <input />
+        </div>
+        <div class='margin-width col-sm-1'>
+          <span>Label</span>
+          <input />
+        </div>
+        <div class='margin-width col-sm-1'>
+          <span>Label</span>
+          <input />
+        </div>
+        <div class='margin-width col-sm-1'>
+          <span>Label</span>
+          <input />
+        </div>
+        <div class='margin-width col-sm-1'>
+          <button type="button" class="btn btn-danger">Button</button>
+        </div>
+      </div>
+      <div class='bottom-gray-bar row'>
+        <div class='col-md-6 padded-half'>
+          <div class='bottom-title'>
+            About the artist:
+          </div>
+          <div class='bottom-paragraph'>
+            Lorem ipsum dolor sit amet, quo ex platonem hendrerit, per habeo scripta id, et duis albucius comprehensam eam. Civibus voluptatum dissentias vel ad. Ut quem delectus his, ut sed posidonium assueverit. Quo dico tota ex, mea modus eruditi voluptua ea, vel te quas electram ocurreret. Ex eos case laoreet, qui in porro everti honestatis, ad adhuc debitis pri. Nec feugiat tincidunt conclusionemque ea, ius dicam reprehendunt et.
+          </div>
+        </div>
+        <div class='col-md-6 padded-half'>
+          <div class='bottom-title'>
+            About the project:
+          </div>
+          <div class='bottom-paragraph'>
+            Lorem ipsum dolor sit amet, quo ex platonem hendrerit, per habeo scripta id, et duis albucius comprehensam eam. Civibus voluptatum dissentias vel ad. Ut quem delectus his, ut sed posidonium assueverit. Quo dico tota ex, mea modus eruditi voluptua ea, vel te quas electram ocurreret. Ex eos case laoreet, qui in porro everti honestatis, ad adhuc debitis pri. Nec feugiat tincidunt conclusionemque ea, ius dicam reprehendunt et.
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/js/map.js"></script> 
+    <script src="js/modalController.js"></script>
+  </body>
+</html>
