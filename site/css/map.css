@@ -1,0 +1,30 @@
+.background {
+  fill: none;
+  pointer-events: all;
+}
+
+#states {
+  fill: #aaa;
+}
+
+#states .active {
+  fill: orange;
+}
+
+#state-borders {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1.5px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  pointer-events: none;
+}
+
+#map-container {
+  height: 500px; /* todo: responsive */;
+  background: #fff;
+  color: #888;
+  line-height: 500px;
+  font-size: 60px;
+  text-align: center;
+}
