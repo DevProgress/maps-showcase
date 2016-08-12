@@ -114,11 +114,3 @@
   ms-animation: loading-pulse 2s infinite;
   animation: loading-pulse 2s infinite;
 }
-
-#map-container svg {
-  webkit-animation: fade-in .5s;
-  moz-animation: fade-in .5s;
-  o-animation: fade-in .5s;
-  ms-animation: fade-in .5s;
-  animation: fade-in .5s;
-}
