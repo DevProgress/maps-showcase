@@ -4,19 +4,28 @@
 }
 
 .middle-gray-bar .middle-title {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   padding-top: 15px;
   padding-bottom: 15px;
+  text-align:center;
+}
+
+@media (max-width: 768px) { /* equivalent to bootstrap min size, without using Less */
+  .middle-gray-bar .middle-title {
+    text-align:left;
+    margin-left: 15px;
+    padding-bottom: 0;
+  }
 }
 
 .middle-gray-bar .margin-width {
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 11px;
+  padding-bottom: 5px;
 }
 
 .middle-gray-bar .margin-width input {
-  max-width: 80px;
+  width: 100%;
 }
 
 .middle-gray-bar .margin-width span {
@@ -24,8 +33,25 @@
 }
 
 .middle-gray-bar .margin-width button {
-  margin-top: 15px;
+  margin-top: 19px;
+  width: 100%;
+  height: 26px;
+  padding-top: 3px;
+  border-radius: 0;
+  font-weight: bold;
 }
+
+@media (max-width: 768px) { /* equivalent to bootstrap min size, without using Less */
+  .middle-gray-bar .margin-width button {
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+  .button-container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
 
 /* Styles for bottom strip of page */
 .bottom-gray-bar {
