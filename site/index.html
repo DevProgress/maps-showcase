@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta name="description" content="Map Showcase - Join Hillary">
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="assets/img/favicon.ico">
 
     <title>Map Showcase - Join Hillary</title>
 
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <!-- https://github.com/Haixing-Hu/bootstrap3-ie10-viewport-bug-workaround -->
-    <link href="vendor/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="assets/vendor/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -22,7 +22,7 @@
       <script src="vendor/respond.min.js"></script>
     <![endif]-->
 
-    <link href="css/base.css" rel="stylesheet">
+    <link href="assets/css/base.css" rel="stylesheet">
 
   </head>
 
@@ -30,7 +30,13 @@
     <div class='container-fluid'>
       <div class='row'>
         <a href='map.html' style='float:left'>View Map</a>
-        <img src='img/static-photo-video.png' style='width:100%' />
+        <!-- video code example, the high-voted answer, not the -1 answer on top: 
+             http://stackoverflow.com/questions/14616453/image-placeholder-fallback-for-html5-video -->
+        <video autoplay muted controls loop style='width:100%'>
+          <source src="assets/vid/SampleVideo_1280x720_1mb.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+          <!-- source src="FOO.webm" type='video/webm; codecs="vp8, vorbis"' / -->
+          <img src='assets/img/static-photo-video.png' style='width:100%' title='Your browser does not support the <video> tag'>
+        </video>
       </div>
       
       <div class='middle-gray-bar row'>
