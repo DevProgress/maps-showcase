@@ -29,14 +29,28 @@
     <script src="//d3js.org/d3.v3.min.js"></script>
     <script src="//d3js.org/topojson.v1.min.js"></script>
 
-
   </head>
 
   <body>
+    <a onclick="modalController.showState('MA');">MA</a>
+
+    <!-- starts hidden but in the DOM -->
+    <div id="mainModal" class="modal fade" tabindex="-1" role="dialog">
+      <div id="modalBackdrop" class="modal-backdrop fade" style="z-index: -1" onClick="modalController.hideModal()"></div>
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div id="state-title"></div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div>
+    </div>
+    <!-- end modal -->
+
+
     <div class='container-fluid'>
       <div class='row'>
-        <a href='/' style='float:left'>Home</a>
-        <div id='map-container'Sam  >
+        <div id='map-container'>
           <div class='loading-message'>Loading...</div>
         </div>
       </div>
@@ -68,7 +82,7 @@
           <button type="button" class="btn btn-danger full-width-button">Button</button>
         </div>
       </div>
-      
+
       <div class='bottom-gray-bar row'>
         <div class='col-sm-6 padded-half'>
           <div class='bottom-title'>
@@ -89,6 +103,8 @@
       </div>
     </div>
     <script src="assets/js/map.js"></script>
+    <script src="assets/js/modal-controller.js"></script>
+>>>>>>> hook up quick jQuery-free modal
 
   </body>
 </html>
