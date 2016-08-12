@@ -13,7 +13,7 @@ var initMap = function () {
 
   var svg, g;
 
-  d3.json("/js/us.json", function(error, us) {
+  d3.json("assets/js/us.json", function(error, us) {
 
     document.getElementById('map-container').innerHTML = '';
 
