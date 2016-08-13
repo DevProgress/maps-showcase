@@ -1,11 +1,11 @@
 var initMap = function () {
 
-  var width = 960,
-      height = 500,
+  var width = document.documentElement.clientWidth || document.body.clientWidth,
+      height = width * 500 / 960,
       centered;
 
   var projection = d3.geo.albersUsa()
-      .scale(1070)
+      .scale(width)
       .translate([width / 2, height / 2]);
 
   var path = d3.geo.path()
@@ -15,7 +15,9 @@ var initMap = function () {
 
   d3.json("assets/js/us.json", function(error, us) {
 
-    document.getElementById('map-container').innerHTML = '';
+    var mapContainer = document.getElementById('map-container');
+    mapContainer.innerHTML = '';
+    mapContainer.style.height = height * 1.05;
 
     svg = d3.select("#map-container").append("svg")
         .attr("width", width)
@@ -91,3 +93,7 @@ var initMap = function () {
 };
 
 initMap();
+window.addEventListener("resize", function(){
+    initMap();
+});
+
