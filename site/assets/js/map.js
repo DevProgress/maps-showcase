@@ -47,7 +47,25 @@ var initMap = function () {
         .attr("d", path);
   });
 
+  stateIdMap = {
+    6: 'CA',
+    25: 'MA'
+  }
+
   function clicked(d) {
+
+    //looks like we can tell the state from d.id.
+    var state = stateIdMap[d.id];
+    if (!state) {
+      return alert('Sorry, I only know about MA and CA right now...');
+    }
+
+    modalController.showState(state);
+
+
+    /*
+    Don't zoom. Do select the state.
+
     var x, y, k;
 
     if (d && centered !== d) {
@@ -70,6 +88,7 @@ var initMap = function () {
         .duration(750)
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")")
         .style("stroke-width", 1.5 / k + "px");
+    */
   }
 };
 

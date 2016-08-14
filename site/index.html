@@ -1,47 +1,135 @@
 <html>
+
   <head>
     <!-- This header content from https://getbootstrap.com/examples/grid/ -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-    <meta name="description" content="Map Showcase - Join Hillary">
-    <link rel="icon" href="assets/img/favicon.ico">
+    <meta name='description' content='Map Showcase - Join Hillary'>
+    <link rel='icon' href='assets/img/favicon.ico'>
 
     <title>Map Showcase - Join Hillary</title>
 
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href='assets/vendor/bootstrap/css/bootstrap.min.css' rel='stylesheet'>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <!-- https://github.com/Haixing-Hu/bootstrap3-ie10-viewport-bug-workaround -->
-    <link href="assets/vendor/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href='assets/vendor/ie10-viewport-bug-workaround.css' rel='stylesheet'>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="vendor/html5shiv.min.js"></script>
-      <script src="vendor/respond.min.js"></script>
+      <script src='vendor/html5shiv.min.js'></script>
+      <script src='vendor/respond.min.js'></script>
     <![endif]-->
 
-    <link href="assets/css/base.css" rel="stylesheet">
+    <link href='assets/css/base.css' rel='stylesheet'>
+    <link href='assets/css/map.css' rel='stylesheet'>
+
+    <script src='//d3js.org/d3.v3.min.js'></script>
+    <script src='//d3js.org/topojson.v1.min.js'></script>
 
   </head>
 
   <body>
+    <!-- video modal shows on page load -->
+    <div id='videoModal' class='modal fade show in' tabindex='-1' role='dialog'>
+      <div id='videoModalBackdrop' class='modal-backdrop fade show in' style='z-index: -1' onClick='videoModalController.hideModal()'></div>
+      <div class='modal-dialog modal-lg' role='document'>
+        <div class='modal-content'>
+          <div class='modal-body'>
+              <div class='container-fluid'>
+                <div class='row'>
+                 <img id='overlayImage' src='assets/img/static-photo-video.png' style='width:100%;' title='Click to play the video.' onClick='videoModalController.playVideo()' />
+                  <!-- video code example, the high-voted answer, not the -1 answer on top: 
+                       http://stackoverflow.com/questions/14616453/image-placeholder-fallback-for-html5-video -->
+                  <video controls style='width:100%; display:none'>
+                    <source src='assets/vid/SampleVideo_1280x720_1mb.mp4' type='video/mp4; codecs='avc1.42E01E, mp4a.40.2'' />
+                    <!-- source src='FOO.webm' type='video/webm; codecs='vp8, vorbis'' / -->
+                    <img src='assets/img/static-photo-video.png' style='width:100%' title='Your browser does not support the <video> tag'>
+                  </video>
+                </div>
+                
+                <div class='middle-gray-bar row'>
+                  <div class='middle-title col-sm-2'>
+                    Join Women <br /> for Hillary
+                  </div>
+
+                  <div class='col-sm-7'>
+                    <div class='margin-width col-sm-3'>
+                      <span>Label</span>
+                      <input />
+                    </div>
+                    <div class='margin-width col-sm-3'>
+                      <span>Label</span>
+                      <input />
+                    </div>
+                    <div class='margin-width col-sm-3'>
+                      <span>Label</span>
+                      <input />
+                    </div>
+                    <div class='margin-width col-sm-3'>
+                      <span>Label</span>
+                      <input />
+                    </div>
+                  </div>
+
+                  <div class='margin-width button-container col-sm-2 col-xs-12'>
+                    <button type='button' class='btn btn-danger full-width-button'>Button</button>
+                  </div>
+                </div>
+                
+                <div class='bottom-gray-bar row'>
+                  <div class='col-sm-6 padded-half'>
+                    <div class='bottom-title'>
+                      About the artist:
+                    </div>
+                    <div class='bottom-paragraph'>
+                      Lorem ipsum dolor sit amet, quo ex platonem hendrerit, per habeo scripta id, et duis albucius comprehensam eam. Civibus voluptatum dissentias vel ad. Ut quem delectus his, ut sed posidonium assueverit. Quo dico tota ex, mea modus eruditi voluptua ea, vel te quas electram ocurreret. Ex eos case laoreet, qui in porro everti honestatis, ad adhuc debitis pri. Nec feugiat tincidunt conclusionemque ea, ius dicam reprehendunt et.
+                    </div>
+                  </div>
+                  <div class='col-sm-6 padded-half'>
+                    <div class='bottom-title'>
+                      About the project:
+                    </div>
+                    <div class='bottom-paragraph'>
+                      Lorem ipsum dolor sit amet, quo ex platonem hendrerit, per habeo scripta id, et duis albucius comprehensam eam. Civibus voluptatum dissentias vel ad. Ut quem delectus his, ut sed posidonium assueverit. Quo dico tota ex, mea modus eruditi voluptua ea, vel te quas electram ocurreret. Ex eos case laoreet, qui in porro everti honestatis, ad adhuc debitis pri. Nec feugiat tincidunt conclusionemque ea, ius dicam reprehendunt et.
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div>
+    </div>
+    <!-- end modal -->
+
+
+    <!-- this modal for clicking states start hidden but in the DOM -->
+    <div id='mainModal' class='modal fade' tabindex='-1' role='dialog'>
+      <div id='modalBackdrop' class='modal-backdrop fade' style='z-index: -1' onClick='modalController.hideModal()'></div>
+      <div class='modal-dialog modal-lg' role='document'>
+        <div class='modal-content'>
+          <div class='modal-body'>
+            <div id='state-title'></div>
+            <a id='left-arrow' onClick='modalController.previousState()'>&larr;</a>
+            <a id='right-arrow' onClick='modalController.nextState()'>&rarr;</a>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div>
+    </div>
+    <!-- end modal -->
+
+
     <div class='container-fluid'>
       <div class='row'>
-        <a href='map.html' style='float:left'>View Map</a>
-        <!-- video code example, the high-voted answer, not the -1 answer on top: 
-             http://stackoverflow.com/questions/14616453/image-placeholder-fallback-for-html5-video -->
-        <video autoplay muted controls loop style='width:100%'>
-          <source src="assets/vid/SampleVideo_1280x720_1mb.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-          <!-- source src="FOO.webm" type='video/webm; codecs="vp8, vorbis"' / -->
-          <img src='assets/img/static-photo-video.png' style='width:100%' title='Your browser does not support the <video> tag'>
-        </video>
+        <div id='map-container'>
+          <div class='loading-message'>Loading...</div>
+        </div>
       </div>
-      
       <div class='middle-gray-bar row'>
         <div class='middle-title col-sm-2'>
-          Join Women <br /> for Hillary
+          Join Labor <br /> for Hillary
         </div>
 
         <div class='col-sm-7'>
@@ -64,10 +152,10 @@
         </div>
 
         <div class='margin-width button-container col-sm-2 col-xs-12'>
-          <button type="button" class="btn btn-danger full-width-button">Button</button>
+          <button type='button' class='btn btn-danger full-width-button'>Button</button>
         </div>
       </div>
-      
+
       <div class='bottom-gray-bar row'>
         <div class='col-sm-6 padded-half'>
           <div class='bottom-title'>
@@ -87,5 +175,8 @@
         </div>
       </div>
     </div>
+    <script src='assets/js/map.js'></script>
+    <script src='assets/js/modal-controller.js'></script>
+    <script src='assets/js/video-modal-controller.js'></script>
   </body>
 </html>
