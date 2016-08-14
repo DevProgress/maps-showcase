@@ -3,7 +3,7 @@ Mobile friendly website with video landing page, slideshows, slideshow selector 
 
 # Demo
 
-https://devprogress.tech/maps-showcase/site/map.html
+https://devprogress.tech/maps-showcase/site/
 
 # Run the site Locally (MacOS)
 
