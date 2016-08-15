@@ -16,10 +16,11 @@ var modalController = (function () {
   };
 
   var populateStateData = function (state) {
-    
     document.getElementById('historical-artifact-image').src = state.historicalArtifactImage;
+    document.getElementById('historical-artifact-image').title = state.historicalArtifactImageTitle;
     document.getElementById('historical-artifact-data').innerText = state.historicalArtifactData;
     document.getElementById('pattern-image').src = state.patternImage;
+    document.getElementById('pattern-image').title = state.patternImageTitle;
     document.getElementById('pattern-data').innerText = state.patternData;
     document.getElementById('state-title').innerText = state_names[state.stateCode];
   }
