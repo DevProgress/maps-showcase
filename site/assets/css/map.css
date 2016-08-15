@@ -139,7 +139,9 @@
   border: 2px gray solid;
   border-radius: 50%;
   display: inline;
-  padding: 14px;
+  padding: 16px;
+  padding-left: 18px;
+  padding-right: 14px;
   margin-left: 16px;
 }
 
@@ -153,4 +155,13 @@
 #modal-controls a:hover {
   text-decoration: none;
   cursor: pointer;
+}
+
+
+/* the X needs less left padding than the arrows to center, and more top padding */
+#close-button .circle-background {
+  padding-left: 15px;
+  padding-right: 17px;
+  padding-top: 16px;
+  padding-bottom: 14px;
 }
