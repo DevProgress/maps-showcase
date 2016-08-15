@@ -16,7 +16,11 @@ var modalController = (function () {
   };
 
   var populateStateData = function (state) {
-    //TODO: populate the rest of this modal
+    
+    document.getElementById('historical-artifact-image').src = state.historicalArtifactImage;
+    document.getElementById('historical-artifact-data').innerText = state.historicalArtifactData;
+    document.getElementById('pattern-image').src = state.patternImage;
+    document.getElementById('pattern-data').innerText = state.patternData;
     document.getElementById('state-title').innerText = state_names[state.stateCode];
   }
 
