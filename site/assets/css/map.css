@@ -114,3 +114,54 @@
   ms-animation: loading-pulse 2s infinite;
   animation: loading-pulse 2s infinite;
 }
+
+
+/* the state name in the modal when a state in the map is clicked */
+#state-title {
+  font-size: 24px;
+  font-weight: 700;
+
+}
+
+
+/* the X and arrows in the modal when a state on the map is clicked */
+#modal-controls {
+  position: absolute;
+  right: 10px;
+  top: 22px;
+
+}
+
+
+/* surround the arrows and X in the modal controls with a circle */
+.circle-background {
+  background-color: white;
+  border: 2px gray solid;
+  border-radius: 50%;
+  display: inline;
+  padding: 16px;
+  padding-left: 18px;
+  padding-right: 14px;
+  margin-left: 16px;
+}
+
+
+.circle-background span {
+  color: gray;
+  font-size: 14px;
+}
+
+
+#modal-controls a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* the X needs less left padding than the arrows to center, and more top padding */
+#close-button .circle-background {
+  padding-left: 15px;
+  padding-right: 17px;
+  padding-top: 16px;
+  padding-bottom: 14px;
+}
