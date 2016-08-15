@@ -112,8 +112,23 @@
         <div class='modal-content'>
           <div class='modal-body'>
             <div id='state-title'></div>
-            <a id='left-arrow' onClick='modalController.previousState()'>&larr;</a>
-            <a id='right-arrow' onClick='modalController.nextState()'>&rarr;</a>
+            <div id='modal-controls'>
+              <a id='left-arrow' onClick='modalController.previousState()'>
+                <div class='circle-background'>
+                  <span class='glyphicon glyphicon-arrow-left'></span>
+                </div>
+              </a>
+              <a id='right-arrow' onClick='modalController.nextState()'>
+                <div class='circle-background'>
+                  <span class='glyphicon glyphicon-arrow-right'></span>
+                </div>
+              </a>
+              <a id='close-button' onClick='modalController.hideModal()'>
+                <div class='circle-background'>
+                  <span class='glyphicon glyphicon-remove'></span>
+                </div>
+              </a>
+            </div>
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
       </div>
