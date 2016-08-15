@@ -47,21 +47,15 @@ var initMap = function () {
         .attr("d", path);
   });
 
-  stateIdMap = {
-    6: 'CA',
-    25: 'MA'
-  }
 
   function clicked(d) {
 
     //looks like we can tell the state from d.id.
-    var state = stateIdMap[d.id];
-    if (!state) {
-      return alert('Sorry, I only know about MA and CA right now...');
-    }
+    var state = states_data[d.id];
+
+    state.id = d.id;
 
     modalController.showState(state);
-
 
     /*
     Don't zoom. Do select the state.

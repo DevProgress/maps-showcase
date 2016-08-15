@@ -1,14 +1,5 @@
 var modalController = (function () {
-  var states = {
-    MA: {
-      name: 'Massachusetts'
-    },
-    CA: {
-      name: 'California'
-    }
-  };
 
-  var stateList = ['CA', 'MA'];
   var selectedStateIdx = null;
 
   var modal = document.getElementById('mainModal');
@@ -25,15 +16,12 @@ var modalController = (function () {
   };
 
   var populateStateData = function (state) {
-    selectedState = state;
-    var stateData = states[state];
-    selectedStateIdx = stateList.indexOf(state);
-
     //TODO: populate the rest of this modal
-    document.getElementById('state-title').innerText = stateData.name;
+    document.getElementById('state-title').innerText = state_names[state.stateCode];
   }
 
   var showState = function (state) {
+    selectedStateIdx = state.id;
     modal.style.display = 'block';
     setTimeout(function () {
       modal.className = 'modal fade in';
@@ -43,13 +31,33 @@ var modalController = (function () {
   };
 
   var nextState = function () {
-    if (selectedStateIdx >= stateList.length - 1) return;
-    populateStateData(stateList[selectedStateIdx + 1]);
+    selectedStateIdx += 1;
+    // because state ids are not contiguous
+    while(!states_data.hasOwnProperty(selectedStateIdx)){
+      selectedStateIdx += 1;
+      if (selectedStateIdx >= 57){
+        selectedStateIdx = 1;
+      }
+    }
+
+    console.log(selectedStateIdx);
+    var state = states_data[selectedStateIdx];
+    state.id = selectedStateIdx;
+    populateStateData(state);
   }
 
   var previousState = function () {
-    if (selectedStateIdx == 0) return;
-    populateStateData(stateList[selectedStateIdx - 1]);
+    selectedStateIdx -= 1;
+    // because state ids are not contiguous
+    while(!states_data.hasOwnProperty(selectedStateIdx)){
+      selectedStateIdx -= 1;
+      if (selectedStateIdx <= 0){
+        selectedStateIdx = 56;
+      }
+    }
+    var state = states_data[selectedStateIdx];
+    state.id = selectedStateIdx;
+    populateStateData(state);
   }
 
   return {
