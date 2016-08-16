@@ -1,3 +1,5 @@
+var g, svg;
+
 var initMap = function () {
 
   var width = document.documentElement.clientWidth || document.body.clientWidth,
@@ -10,8 +12,6 @@ var initMap = function () {
 
   var path = d3.geo.path()
       .projection(projection);
-
-  var svg, g;
 
   d3.json("assets/js/us.json", function(error, us) {
 
@@ -30,7 +30,6 @@ var initMap = function () {
         .on("click", clicked);
 
     g = svg.append("g");
-
     if (error) throw error;
 
     g.append("g")
@@ -45,17 +44,27 @@ var initMap = function () {
         .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
         .attr("id", "state-borders")
         .attr("d", path);
+
   });
 
 
-  function clicked(d) {
-
+  clicked = function clicked(d) {
     //looks like we can tell the state from d.id.
     var state = states_data[d.id];
 
     state.id = d.id;
 
     modalController.showState(state);
+
+    var x, y, k;
+
+    var centroid = path.centroid(d);
+    x = centroid[0];
+    y = centroid[1];
+    k = 4;
+    centered = d;
+
+    g.selectAll("path").classed("active", centered && function(d) { return d === centered; });
 
     /*
     Don't zoom. Do select the state.
