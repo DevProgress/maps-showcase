@@ -13,6 +13,8 @@ var modalController = (function () {
     setTimeout(function () {
       modal.style.display = 'none';
     }, 250); //long enough for animation to wrap up
+
+    g.selectAll("path").classed("active", false);
   };
 
   var populateStateData = function (state) {
@@ -36,6 +38,8 @@ var modalController = (function () {
   };
 
   var nextState = function () {
+    g.selectAll("path").classed("active", false);
+
     selectedStateIdx += 1;
     // because state ids are not contiguous
     while(!states_data.hasOwnProperty(selectedStateIdx)){
@@ -45,13 +49,16 @@ var modalController = (function () {
       }
     }
 
-    console.log(selectedStateIdx);
+    g.selectAll("path").filter(function (d) { return d.id === selectedStateIdx;}).classed("active", true)
     var state = states_data[selectedStateIdx];
     state.id = selectedStateIdx;
     populateStateData(state);
   }
 
   var previousState = function () {
+    g.selectAll("path").classed("active", false);
+
+
     selectedStateIdx -= 1;
     // because state ids are not contiguous
     while(!states_data.hasOwnProperty(selectedStateIdx)){
@@ -60,6 +67,8 @@ var modalController = (function () {
         selectedStateIdx = 56;
       }
     }
+
+    g.selectAll("path").filter(function (d) { return d.id === selectedStateIdx;}).classed("active", true)
     var state = states_data[selectedStateIdx];
     state.id = selectedStateIdx;
     populateStateData(state);
