@@ -49,7 +49,7 @@ var modalController = (function () {
       }
     }
 
-    g.selectAll("path").filter(function (d, i) { return i === selectedStateIdx;}).classed("active", true)
+    g.selectAll("path").filter(function (d) { return d.id === selectedStateIdx;}).classed("active", true)
     var state = states_data[selectedStateIdx];
     state.id = selectedStateIdx;
     populateStateData(state);
@@ -68,7 +68,7 @@ var modalController = (function () {
       }
     }
 
-    g.selectAll("path").filter(function (d, i) { return i === selectedStateIdx;}).classed("active", true)
+    g.selectAll("path").filter(function (d) { return d.id === selectedStateIdx;}).classed("active", true)
     var state = states_data[selectedStateIdx];
     state.id = selectedStateIdx;
     populateStateData(state);
