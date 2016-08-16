@@ -48,7 +48,7 @@ var initMap = function () {
   });
 
 
-  clicked = function clicked(d) {
+  function clicked(d) {
     //looks like we can tell the state from d.id.
     var state = states_data[d.id];
 
