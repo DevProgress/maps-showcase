@@ -81,6 +81,10 @@
   pointer-events: all;
 }
 
+path:hover {
+  fill: #888;
+}
+
 #states {
   fill: #aaa;
 }
