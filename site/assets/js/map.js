@@ -14,7 +14,6 @@ var initMap = function () {
       .projection(projection);
 
   d3.json("assets/js/us.json", function(error, us) {
-
     var mapContainer = document.getElementById('map-container');
     mapContainer.innerHTML = '';
     mapContainer.style.height = height * 1.05;
@@ -44,14 +43,12 @@ var initMap = function () {
         .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
         .attr("id", "state-borders")
         .attr("d", path);
-
   });
 
 
   function clicked(d) {
     //looks like we can tell the state from d.id.
     var state = states_data[d.id];
-
     state.id = d.id;
 
     modalController.showState(state);

@@ -38,6 +38,8 @@ var modalController = (function () {
   };
 
   var nextState = function () {
+    g.selectAll("path").classed("active", false);
+
     selectedStateIdx += 1;
     // because state ids are not contiguous
     while(!states_data.hasOwnProperty(selectedStateIdx)){
@@ -47,13 +49,16 @@ var modalController = (function () {
       }
     }
 
-    console.log(selectedStateIdx);
+    g.selectAll("path").filter(function (d, i) { return i === selectedStateIdx;}).classed("active", true)
     var state = states_data[selectedStateIdx];
     state.id = selectedStateIdx;
     populateStateData(state);
   }
 
   var previousState = function () {
+    g.selectAll("path").classed("active", false);
+
+
     selectedStateIdx -= 1;
     // because state ids are not contiguous
     while(!states_data.hasOwnProperty(selectedStateIdx)){
@@ -62,6 +67,8 @@ var modalController = (function () {
         selectedStateIdx = 56;
       }
     }
+
+    g.selectAll("path").filter(function (d, i) { return i === selectedStateIdx;}).classed("active", true)
     var state = states_data[selectedStateIdx];
     state.id = selectedStateIdx;
     populateStateData(state);
