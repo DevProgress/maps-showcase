@@ -1,4 +1,4 @@
-var g, svg;
+var g;
 
 var initMap = function () {
 
