@@ -18,9 +18,27 @@ var modalController = (function () {
   };
 
   var populateStateData = function (state) {
+    // hack together from hacky demo data
+    var title;
+    var description;
+    d3.json("assets/data/showcase-text.json", function(error, listOfDicts) {
+      for (var i=0;i<listOfDicts.length;i++) {               
+        var stateName = listOfDicts[i]["State Year"].split(" ")[0];
+        if (stateName == state_names[state.stateCode]) {
+          title = listOfDicts[i]["Title"]
+          description = listOfDicts[i]["Description"]
+          if (title) {
+            document.getElementById('historical-artifact-data').innerText = title + " - " + description;
+          } else {
+            document.getElementById('historical-artifact-data').innerText = description;
+          }
+          break;
+        }
+      }
+    });
+
     document.getElementById('historical-artifact-image').src = state.historicalArtifactImage;
     document.getElementById('historical-artifact-image').title = state.historicalArtifactImageTitle;
-    document.getElementById('historical-artifact-data').innerText = state.historicalArtifactData;
     document.getElementById('pattern-image').src = state.patternImage;
     document.getElementById('pattern-image').title = state.patternImageTitle;
     document.getElementById('pattern-data').innerText = state.patternData;
