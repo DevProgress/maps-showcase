@@ -12,6 +12,11 @@ https://devprogress.tech/maps-showcase/site/
 
 Then goto http://localhost:8000 in your browser.
 
+# Generating gen/staes-data.json
+
+    cd PATH_TO_REPO/assets
+    python combine-state-data.py
+
 # Style guide
 
 2 space indentation in js / html / css
