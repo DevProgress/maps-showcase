@@ -1,3 +1,22 @@
+/* Styles for the video modal */
+
+#overlayImage {
+  cursor: pointer;
+  width: 100%; 
+}
+
+/* the play icon over the main popover image  */
+.centered-icon {
+  font-size: 50px;
+  color: white;
+  position: relative;
+  margin-top: -90px;
+  left: 50%;
+  margin-left: -25px; /* half icon's width */
+  cursor: pointer;
+}
+
+
 /* Styles for middle strip of page just below the splash */
 .middle-gray-bar {
   background-color: lightgray;

@@ -40,7 +40,10 @@
           <div class='modal-body'>
               <div class='container-fluid'>
                 <div class='row'>
-                 <img id='overlayImage' src='assets/img/static-photo-video.png' style='width:100%;' title='Click to play the video.' onClick='videoModalController.playVideo()' />
+                   <div>
+                     <img id='overlayImage' src='assets/img/static-photo-video.png' title='Click to play the video.' onClick='videoModalController.playVideo()' />
+                     <span class='glyphicon glyphicon-play-circle centered-icon' onClick='videoModalController.playVideo()'></span>
+                   </div>
                   <!-- video code example, the high-voted answer, not the -1 answer on top: 
                        http://stackoverflow.com/questions/14616453/image-placeholder-fallback-for-html5-video -->
                   <video controls style='width:100%; display:none'>
