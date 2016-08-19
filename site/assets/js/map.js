@@ -1,3 +1,8 @@
+var states_data;
+d3.json("assets/gen/states-data.json", function(error, info) {
+  states_data = info;
+});
+
 var g;
 
 var initMap = function () {
