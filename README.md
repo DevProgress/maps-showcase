@@ -12,6 +12,13 @@ https://devprogress.tech/maps-showcase/site/
 
 Then goto http://localhost:8000 in your browser.
 
+# Generating gen/states-data.json
+
+This is how we combine the data we ripped from the PDF and other data for the demo.
+
+    cd PATH_TO_REPO/assets
+    python combine-state-data.py
+
 # Style guide
 
 2 space indentation in js / html / css
