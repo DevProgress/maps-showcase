@@ -1,3 +1,9 @@
+var states_data;
+
+d3.json("assets/gen/states-data.json", function(error, info) {
+  states_data = info;
+});
+
 var modalController = (function () {
 
   var selectedStateIdx = null;
@@ -18,13 +24,15 @@ var modalController = (function () {
   };
 
   var populateStateData = function (state) {
+
     document.getElementById('historical-artifact-image').src = state.historicalArtifactImage;
     document.getElementById('historical-artifact-image').title = state.historicalArtifactImageTitle;
-    document.getElementById('historical-artifact-data').innerText = state.historicalArtifactData;
     document.getElementById('pattern-image').src = state.patternImage;
     document.getElementById('pattern-image').title = state.patternImageTitle;
     document.getElementById('pattern-data').innerText = state.patternData;
-    document.getElementById('state-title').innerText = state_names[state.stateCode];
+    document.getElementById('state-title').innerText = state.stateName;
+    document.getElementById('historical-artifact-image-title').innerText = state.historicalArtifactImageTitle;
+    document.getElementById('historical-artifact-data').innerText = state.historicalArtifactData;
   }
 
   var showState = function (state) {

@@ -40,7 +40,10 @@
           <div class='modal-body'>
               <div class='container-fluid'>
                 <div class='row'>
-                 <img id='overlayImage' src='assets/img/static-photo-video.png' style='width:100%;' title='Click to play the video.' onClick='videoModalController.playVideo()' />
+                   <div>
+                     <img id='overlayImage' src='assets/img/static-photo-video.png' title='Click to play the video.' onClick='videoModalController.playVideo()' />
+                     <span class='glyphicon glyphicon-play-circle centered-icon' onClick='videoModalController.playVideo()'></span>
+                   </div>
                   <!-- video code example, the high-voted answer, not the -1 answer on top: 
                        http://stackoverflow.com/questions/14616453/image-placeholder-fallback-for-html5-video -->
                   <video controls style='width:100%; display:none'>
@@ -131,7 +134,8 @@
             </div>
             <div class="row">
               <div class="col-xs-12 col-md-6">
-                <img id="historical-artifact-image"/>
+                <img id="historical-artifact-image"/><br />
+                <b id="historical-artifact-image-title"></b>
                 <p id="historical-artifact-data"></p>
               </div>
               <div class="col-xs-12 col-md-6">
@@ -200,8 +204,6 @@
         </div>
       </div>
     </div>
-    <script src='assets/js/states-data.js'></script>
-    <script src='assets/js/state-names.js'></script>
     <script src='assets/js/map.js'></script>
     <script src='assets/js/modal-controller.js'></script>
     <script src='assets/js/video-modal-controller.js'></script>
