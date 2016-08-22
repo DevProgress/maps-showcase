@@ -40,11 +40,16 @@
           <div class='modal-body'>
               <div class='container-fluid'>
                 <div class='row'>
-                   <div>
-                     <img id='overlayImage' src='assets/img/static-photo-video.png' title='Click to play the video.' onClick='videoModalController.playVideo()' />
-                     <span class='glyphicon glyphicon-play-circle centered-icon' onClick='videoModalController.playVideo()'></span>
-                   </div>
-                  <!-- video code example, the high-voted answer, not the -1 answer on top: 
+                  <div class='btn-group-vertical pull-right' id='close-modal-button'>
+                    <button type='button' class='btn btn-xs btn-close' onclick='videoModalController.hideModal()'>
+                      <a href='#'>close</a>
+                    </button>
+                  </div>
+                  <div>
+                    <img id='overlayImage' src='assets/img/static-photo-video.png' title='Click to play the video.' onClick='videoModalController.playVideo()' />
+                    <span class='glyphicon glyphicon-play-circle centered-icon' onClick='videoModalController.playVideo()'></span>
+                  </div>
+                  <!-- video code example, the high-voted answer, not the -1 answer on top:
                        http://stackoverflow.com/questions/14616453/image-placeholder-fallback-for-html5-video -->
                   <video controls style='width:100%; display:none'>
                     <source src='assets/vid/SampleVideo_1280x720_1mb.mp4' type='video/mp4; codecs='avc1.42E01E, mp4a.40.2'' />
@@ -52,7 +57,7 @@
                     <img src='assets/img/static-photo-video.png' style='width:100%' title='Your browser does not support the <video> tag'>
                   </video>
                 </div>
-                
+
                 <div class='middle-gray-bar row'>
                   <div class='middle-title col-sm-2'>
                     Join Women <br /> for Hillary
@@ -81,7 +86,7 @@
                     <button type='button' class='btn btn-danger full-width-button'>Button</button>
                   </div>
                 </div>
-                
+
                 <div class='bottom-gray-bar row'>
                   <div class='col-sm-6 padded-half'>
                     <div class='bottom-title'>
