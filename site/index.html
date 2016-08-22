@@ -4,7 +4,8 @@
     <!-- This header content from https://getbootstrap.com/examples/grid/ -->
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- meta name='viewport' content='width=device-width, initial-scale=1'-->
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
 
     <meta name='description' content='Map Showcase - Join Hillary'>
     <link rel='icon' href='assets/img/favicon.ico'>
@@ -28,6 +29,8 @@
 
     <script src='assets/vendor/d3.v3.min.js'></script>
     <script src='assets/vendor/topojson.v1.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js'></script>
+
 
   </head>
 
@@ -40,11 +43,16 @@
           <div class='modal-body'>
               <div class='container-fluid'>
                 <div class='row'>
-                   <div>
-                     <img id='overlayImage' src='assets/img/static-photo-video.png' title='Click to play the video.' onClick='videoModalController.playVideo()' />
-                     <span class='glyphicon glyphicon-play-circle centered-icon' onClick='videoModalController.playVideo()'></span>
-                   </div>
-                  <!-- video code example, the high-voted answer, not the -1 answer on top: 
+                  <div class='btn-group-vertical pull-right' id='close-modal-button'>
+                    <button type='button' class='btn btn-xs btn-close' onclick='videoModalController.hideModal()'>
+                      <a href='#'>close</a>
+                    </button>
+                  </div>
+                  <div>
+                    <img id='overlayImage' src='assets/img/static-photo-video.png' title='Click to play the video.' onClick='videoModalController.playVideo()' />
+                    <span class='glyphicon glyphicon-play-circle centered-icon' onClick='videoModalController.playVideo()'></span>
+                  </div>
+                  <!-- video code example, the high-voted answer, not the -1 answer on top:
                        http://stackoverflow.com/questions/14616453/image-placeholder-fallback-for-html5-video -->
                   <video controls style='width:100%; display:none'>
                     <source src='assets/vid/SampleVideo_1280x720_1mb.mp4' type='video/mp4; codecs='avc1.42E01E, mp4a.40.2'' />
@@ -52,7 +60,7 @@
                     <img src='assets/img/static-photo-video.png' style='width:100%' title='Your browser does not support the <video> tag'>
                   </video>
                 </div>
-                
+
                 <div class='middle-gray-bar row'>
                   <div class='middle-title col-sm-2'>
                     Join Women <br /> for Hillary
@@ -81,7 +89,7 @@
                     <button type='button' class='btn btn-danger full-width-button'>Button</button>
                   </div>
                 </div>
-                
+
                 <div class='bottom-gray-bar row'>
                   <div class='col-sm-6 padded-half'>
                     <div class='bottom-title'>
@@ -151,9 +159,11 @@
 
 
     <div class='container-fluid'>
-      <div class='row'>
-        <div id='map-container'>
-          <div class='loading-message'>Loading...</div>
+      <div class='row' id='map-container-outer'>
+        <div>
+          <div id='map-container'>
+            <div class='loading-message'>Loading...</div>
+          </div>
         </div>
       </div>
       <div class='middle-gray-bar row'>
@@ -207,5 +217,100 @@
     <script src='assets/js/map.js'></script>
     <script src='assets/js/modal-controller.js'></script>
     <script src='assets/js/video-modal-controller.js'></script>
+
+    <script src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
+
+    <script>
+    /* http://stackoverflow.com/questions/18011099/pinch-to-zoom-using-hammer-js */
+    function hammerIt(elm) {
+      hammertime = new Hammer(elm, {});
+      hammertime.get('pinch').set({
+          enable: true
+      });
+
+      var posX = 0,
+          posY = 0,
+          scale = 1,
+          last_scale = 1,
+          last_posX = 0,
+          last_posY = 0,
+          max_pos_x = 0,
+          max_pos_y = 0,
+          transform = "",
+          el = elm;
+
+      hammertime.on('doubletap pan pinch panend pinchend', function(ev) {
+          if (ev.type == "doubletap") {
+              transform =
+                  "translate3d(0, 0, 0) " +
+                  "scale3d(2, 2, 1) ";
+              scale = 2;
+              last_scale = 2;
+              try {
+                  if (window.getComputedStyle(el, null).getPropertyValue('-webkit-transform').toString() != "matrix(1, 0, 0, 1, 0, 0)") {
+                      transform =
+                          "translate3d(0, 0, 0) " +
+                          "scale3d(1, 1, 1) ";
+                      scale = 1;
+                      last_scale = 1;
+                  }
+              } catch (err) {}
+              el.style.webkitTransform = transform;
+              transform = "";
+          }
+
+          //pan    
+          if (scale != 1) {
+              posX = last_posX + ev.deltaX;
+              posY = last_posY + ev.deltaY;
+              max_pos_x = Math.ceil((scale - 1) * el.clientWidth / 2);
+              max_pos_y = Math.ceil((scale - 1) * el.clientHeight / 2);
+              if (posX > max_pos_x) {
+                  posX = max_pos_x;
+              }
+              if (posX < -max_pos_x) {
+                  posX = -max_pos_x;
+              }
+              if (posY > max_pos_y) {
+                  posY = max_pos_y;
+              }
+              if (posY < -max_pos_y) {
+                  posY = -max_pos_y;
+              }
+          }
+
+
+          //pinch
+          if (ev.type == "pinch") {
+              scale = Math.max(.999, Math.min(last_scale * (ev.scale), 4));
+          }
+          if(ev.type == "pinchend"){last_scale = scale;}
+
+          //panend
+          if(ev.type == "panend"){
+          last_posX = posX < max_pos_x ? posX : max_pos_x;
+          last_posY = posY < max_pos_y ? posY : max_pos_y;
+          }
+
+          if (scale != 1) {
+              transform =
+                  "translate3d(" + posX + "px," + posY + "px, 0) " +
+                  "scale3d(" + scale + ", " + scale + ", 1)";
+          }
+
+          if (transform) {
+              el.style.webkitTransform = transform;
+          }
+      });
+    }
+
+
+    $( document ).ready(function() {
+      var mapDiv = document.getElementById('map-container-outer');
+      hammerIt(mapDiv)
+      
+    });
+    </script>
+});
   </body>
 </html>
