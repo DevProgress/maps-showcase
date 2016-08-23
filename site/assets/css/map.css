@@ -125,7 +125,14 @@ path:hover {
 #state-title {
   font-size: 24px;
   font-weight: 700;
+}
 
+
+@media (max-width: 500px) { /* equivalent to bootstrap min size, without using Less */
+  #state-title {
+    font-size: 18px;
+    font-weight: 700;
+  }
 }
 
 
@@ -133,40 +140,34 @@ path:hover {
 #modal-controls {
   position: absolute;
   right: 10px;
-  top: 22px;
+  top: 10px;
 
 }
-
 
 /* surround the arrows and X in the modal controls with a circle */
 .circle-background {
   background-color: white;
   border: 2px gray solid;
   border-radius: 50%;
-  display: inline;
-  padding: 16px;
-  padding-left: 18px;
-  padding-right: 14px;
-  margin-left: 16px;
+  display: inline-block;
+  padding: 10px;
+  margin-left: 10px;
+}
+
+@media (max-width: 768px) { /* equivalent to bootstrap min size, without using Less */
+  .circle-background {
+    padding: 5px;
+    margin-left: 3px;
+  }
 }
 
 
-.circle-background span {
-  color: gray;
-  font-size: 14px;
+.gray-svg {
+    fill: gray;
 }
-
 
 #modal-controls a:hover {
   text-decoration: none;
   cursor: pointer;
 }
 
-
-/* the X needs less left padding than the arrows to center, and more top padding */
-#close-button .circle-background {
-  padding-left: 15px;
-  padding-right: 17px;
-  padding-top: 16px;
-  padding-bottom: 14px;
-}

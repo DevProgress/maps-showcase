@@ -126,17 +126,17 @@
             <div id='modal-controls'>
               <a id='left-arrow' onClick='modalController.previousState()'>
                 <div class='circle-background'>
-                  <span class='glyphicon glyphicon-arrow-left'></span>
+                  <img class='gray-svg' src="/assets/img/ic_chevron_left_black_24px.svg" />
                 </div>
               </a>
               <a id='right-arrow' onClick='modalController.nextState()'>
                 <div class='circle-background'>
-                  <span class='glyphicon glyphicon-arrow-right'></span>
+                  <img class='gray-svg' src="/assets/img/ic_chevron_right_black_24px.svg" />
                 </div>
               </a>
               <a id='close-button' onClick='modalController.hideModal()'>
                 <div class='circle-background'>
-                  <span class='glyphicon glyphicon-remove'></span>
+                  <img class='gray-svg' src="/assets/img/ic_close_black_24px.svg" />
                 </div>
               </a>
             </div>
@@ -259,7 +259,7 @@
               transform = "";
           }
 
-          //pan    
+          //pan
           if (scale != 1) {
               posX = last_posX + ev.deltaX;
               posY = last_posY + ev.deltaY;
@@ -308,7 +308,7 @@
     $( document ).ready(function() {
       var mapDiv = document.getElementById('map-container-outer');
       hammerIt(mapDiv)
-      
+
     });
     </script>
 });
