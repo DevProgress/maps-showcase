@@ -1,314 +1,70 @@
-<html>
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script src="//d3js.org/topojson.v1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-  <head>
-    <!-- This header content from https://getbootstrap.com/examples/grid/ -->
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <!-- meta name='viewport' content='width=device-width, initial-scale=1'-->
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+<!-- App -->
+<link rel="stylesheet" type="text/css" href="site.css">
+<link rel="stylesheet" type="text/css" href="map.css">
+<link rel="stylesheet" type="text/css" href="state.css">
+<script src="map.js?v7"></script>
 
-    <meta name='description' content='Map Showcase - Join Hillary'>
-    <link rel='icon' href='assets/img/favicon.ico'>
+<body>
+    
+    <div id="map-stage"></div>
 
-    <title>Map Showcase - Join Hillary</title>
-
-    <link href='assets/vendor/bootstrap/css/bootstrap.min.css' rel='stylesheet'>
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <!-- https://github.com/Haixing-Hu/bootstrap3-ie10-viewport-bug-workaround -->
-    <link href='assets/vendor/ie10-viewport-bug-workaround.css' rel='stylesheet'>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src='vendor/html5shiv.min.js'></script>
-      <script src='vendor/respond.min.js'></script>
-    <![endif]-->
-
-    <link href='assets/css/base.css' rel='stylesheet'>
-    <link href='assets/css/map.css' rel='stylesheet'>
-
-    <script src='assets/vendor/d3.v3.min.js'></script>
-    <script src='assets/vendor/topojson.v1.min.js'></script>
-
-  </head>
-
-  <body>
-    <!-- video modal shows on page load -->
-    <div id='videoModal' class='modal fade show in' tabindex='-1' role='dialog'>
-      <div id='videoModalBackdrop' class='modal-backdrop fade show in' style='z-index: -1' onClick='videoModalController.hideModal()'></div>
-      <div class='modal-dialog modal-lg' role='document'>
-        <div class='modal-content'>
-          <div class='modal-body'>
-              <div class='container-fluid'>
-                <div class='row'>
-                  <div class='btn-group-vertical pull-right' id='close-modal-button'>
-                    <button type='button' class='btn btn-xs btn-close' onclick='videoModalController.hideModal()'>
-                      <a href='#'>close</a>
-                    </button>
-                  </div>
-                  <div>
-                    <img id='overlayImage' src='assets/img/static-photo-video.png' title='Click to play the video.' onClick='videoModalController.playVideo()' />
-                    <span class='glyphicon glyphicon-play-circle centered-icon' onClick='videoModalController.playVideo()'></span>
-                  </div>
-                  <!-- video code example, the high-voted answer, not the -1 answer on top:
-                       http://stackoverflow.com/questions/14616453/image-placeholder-fallback-for-html5-video -->
-                  <video controls style='width:100%; display:none'>
-                    <source src='assets/vid/SampleVideo_1280x720_1mb.mp4' type='video/mp4; codecs='avc1.42E01E, mp4a.40.2'' />
-                    <!-- source src='FOO.webm' type='video/webm; codecs='vp8, vorbis'' / -->
-                    <img src='assets/img/static-photo-video.png' style='width:100%' title='Your browser does not support the <video> tag'>
-                  </video>
-                </div>
-
-                <div class='middle-gray-bar row'>
-                  <div class='middle-title col-sm-2'>
-                    Join Women <br /> for Hillary
-                  </div>
-
-                  <div class='col-sm-7'>
-                    <div class='margin-width col-sm-3'>
-                      <span>Label</span>
-                      <input />
-                    </div>
-                    <div class='margin-width col-sm-3'>
-                      <span>Label</span>
-                      <input />
-                    </div>
-                    <div class='margin-width col-sm-3'>
-                      <span>Label</span>
-                      <input />
-                    </div>
-                    <div class='margin-width col-sm-3'>
-                      <span>Label</span>
-                      <input />
-                    </div>
-                  </div>
-
-                  <div class='margin-width button-container col-sm-2 col-xs-12'>
-                    <button type='button' class='btn btn-danger full-width-button'>Button</button>
-                  </div>
-                </div>
-
-                <div class='bottom-gray-bar row'>
-                  <div class='col-sm-6 padded-half'>
-                    <div class='bottom-title'>
-                      About the artist:
-                    </div>
-                    <div class='bottom-paragraph'>
-                      Lorem ipsum dolor sit amet, quo ex platonem hendrerit, per habeo scripta id, et duis albucius comprehensam eam. Civibus voluptatum dissentias vel ad. Ut quem delectus his, ut sed posidonium assueverit. Quo dico tota ex, mea modus eruditi voluptua ea, vel te quas electram ocurreret. Ex eos case laoreet, qui in porro everti honestatis, ad adhuc debitis pri. Nec feugiat tincidunt conclusionemque ea, ius dicam reprehendunt et.
-                    </div>
-                  </div>
-                  <div class='col-sm-6 padded-half'>
-                    <div class='bottom-title'>
-                      About the project:
-                    </div>
-                    <div class='bottom-paragraph'>
-                      Lorem ipsum dolor sit amet, quo ex platonem hendrerit, per habeo scripta id, et duis albucius comprehensam eam. Civibus voluptatum dissentias vel ad. Ut quem delectus his, ut sed posidonium assueverit. Quo dico tota ex, mea modus eruditi voluptua ea, vel te quas electram ocurreret. Ex eos case laoreet, qui in porro everti honestatis, ad adhuc debitis pri. Nec feugiat tincidunt conclusionemque ea, ius dicam reprehendunt et.
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-      </div>
-    </div>
-    <!-- end modal -->
-
-
-    <!-- this modal for clicking states start hidden but in the DOM -->
-    <div id='mainModal' class='modal fade' tabindex='-1' role='dialog'>
-      <div id='modalBackdrop' class='modal-backdrop fade' style='z-index: -1' onClick='modalController.hideModal()'></div>
-      <div class='modal-dialog modal-lg' role='document'>
-        <div class='modal-content'>
-          <div class='modal-body'>
-            <div id='state-title'></div>
-            <div id='modal-controls'>
-              <a id='left-arrow' onClick='modalController.previousState()'>
-                <div class='circle-background'>
-                  <img class='gray-svg' src="/assets/img/ic_chevron_left_black_24px.svg" />
-                </div>
-              </a>
-              <a id='right-arrow' onClick='modalController.nextState()'>
-                <div class='circle-background'>
-                  <img class='gray-svg' src="/assets/img/ic_chevron_right_black_24px.svg" />
-                </div>
-              </a>
-              <a id='close-button' onClick='modalController.hideModal()'>
-                <div class='circle-background'>
-                  <img class='gray-svg' src="/assets/img/ic_close_black_24px.svg" />
-                </div>
-              </a>
-            </div>
-            <div class="row">
-              <div class="col-xs-12 col-md-6">
-                <img id="historical-artifact-image"/><br />
-                <b id="historical-artifact-image-title"></b>
-                <p id="historical-artifact-data"></p>
-              </div>
-              <div class="col-xs-12 col-md-6">
-                <img id="pattern-image"/>
-                <p id="pattern-data"></p>
-              </div>
-            </div>
-          </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-      </div>
-    </div>
-    <!-- end modal -->
-
-
-    <div class='container-fluid'>
-      <div class='row' id='map-container-outer'>
-        <div>
-          <div id='map-container'>
-            <div class='loading-message'>Loading...</div>
-          </div>
-        </div>
-      </div>
-      <div class='middle-gray-bar row'>
-        <div class='middle-title col-sm-2'>
-          Join Labor <br /> for Hillary
-        </div>
-
-        <div class='col-sm-7'>
-          <div class='margin-width col-sm-3'>
-            <span>Label</span>
-            <input />
-          </div>
-          <div class='margin-width col-sm-3'>
-            <span>Label</span>
-            <input />
-          </div>
-          <div class='margin-width col-sm-3'>
-            <span>Label</span>
-            <input />
-          </div>
-          <div class='margin-width col-sm-3'>
-            <span>Label</span>
-            <input />
-          </div>
-        </div>
-
-        <div class='margin-width button-container col-sm-2 col-xs-12'>
-          <button type='button' class='btn btn-danger full-width-button'>Button</button>
-        </div>
-      </div>
-
-      <div class='bottom-gray-bar row'>
-        <div class='col-sm-6 padded-half'>
-          <div class='bottom-title'>
-            About the artist:
-          </div>
-          <div class='bottom-paragraph'>
-            Lorem ipsum dolor sit amet, quo ex platonem hendrerit, per habeo scripta id, et duis albucius comprehensam eam. Civibus voluptatum dissentias vel ad. Ut quem delectus his, ut sed posidonium assueverit. Quo dico tota ex, mea modus eruditi voluptua ea, vel te quas electram ocurreret. Ex eos case laoreet, qui in porro everti honestatis, ad adhuc debitis pri. Nec feugiat tincidunt conclusionemque ea, ius dicam reprehendunt et.
-          </div>
-        </div>
-        <div class='col-sm-6 padded-half'>
-          <div class='bottom-title'>
-            About the project:
-          </div>
-          <div class='bottom-paragraph'>
-            Lorem ipsum dolor sit amet, quo ex platonem hendrerit, per habeo scripta id, et duis albucius comprehensam eam. Civibus voluptatum dissentias vel ad. Ut quem delectus his, ut sed posidonium assueverit. Quo dico tota ex, mea modus eruditi voluptua ea, vel te quas electram ocurreret. Ex eos case laoreet, qui in porro everti honestatis, ad adhuc debitis pri. Nec feugiat tincidunt conclusionemque ea, ius dicam reprehendunt et.
+    <div class="row-title">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h1>Labour for Hillary</h1>
           </div>
         </div>
       </div>
     </div>
-    <script src='assets/js/map.js'></script>
-    <script src='assets/js/modal-controller.js'></script>
-    <script src='assets/js/video-modal-controller.js'></script>
 
-    <script src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
+    <div class="row-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <h4>About the artist</h4>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <script>
-    /* http://stackoverflow.com/questions/18011099/pinch-to-zoom-using-hammer-js */
-    function hammerIt(elm) {
-      hammertime = new Hammer(elm, {});
-      hammertime.get('pinch').set({
-          enable: true
-      });
-
-      var posX = 0,
-          posY = 0,
-          scale = 1,
-          last_scale = 1,
-          last_posX = 0,
-          last_posY = 0,
-          max_pos_x = 0,
-          max_pos_y = 0,
-          transform = "",
-          el = elm;
-
-      hammertime.on('doubletap pan pinch panend pinchend', function(ev) {
-          if (ev.type == "doubletap") {
-              transform =
-                  "translate3d(0, 0, 0) " +
-                  "scale3d(2, 2, 1) ";
-              scale = 2;
-              last_scale = 2;
-              try {
-                  if (window.getComputedStyle(el, null).getPropertyValue('-webkit-transform').toString() != "matrix(1, 0, 0, 1, 0, 0)") {
-                      transform =
-                          "translate3d(0, 0, 0) " +
-                          "scale3d(1, 1, 1) ";
-                      scale = 1;
-                      last_scale = 1;
-                  }
-              } catch (err) {}
-              el.style.webkitTransform = transform;
-              transform = "";
-          }
-
-          //pan
-          if (scale != 1) {
-              posX = last_posX + ev.deltaX;
-              posY = last_posY + ev.deltaY;
-              max_pos_x = Math.ceil((scale - 1) * el.clientWidth / 2);
-              max_pos_y = Math.ceil((scale - 1) * el.clientHeight / 2);
-              if (posX > max_pos_x) {
-                  posX = max_pos_x;
-              }
-              if (posX < -max_pos_x) {
-                  posX = -max_pos_x;
-              }
-              if (posY > max_pos_y) {
-                  posY = max_pos_y;
-              }
-              if (posY < -max_pos_y) {
-                  posY = -max_pos_y;
-              }
-          }
-
-
-          //pinch
-          if (ev.type == "pinch") {
-              scale = Math.max(.999, Math.min(last_scale * (ev.scale), 4));
-          }
-          if(ev.type == "pinchend"){last_scale = scale;}
-
-          //panend
-          if(ev.type == "panend"){
-          last_posX = posX < max_pos_x ? posX : max_pos_x;
-          last_posY = posY < max_pos_y ? posY : max_pos_y;
-          }
-
-          if (scale != 1) {
-              transform =
-                  "translate3d(" + posX + "px," + posY + "px, 0) " +
-                  "scale3d(" + scale + ", " + scale + ", 1)";
-          }
-
-          if (transform) {
-              el.style.webkitTransform = transform;
-          }
-      });
-    }
-
-
-    $( document ).ready(function() {
-      var mapDiv = document.getElementById('map-container-outer');
-      hammerIt(mapDiv)
-
-    });
-    </script>
-});
-  </body>
+  <!-- Modal Dialog -->
+  <div>
+      <!-- Button trigger modal -->
+    <button type="button" id="modal-dialog-state-1" class="btn btn-primary btn-lg hidden" data-toggle="modal" data-target="#myModal-1">
+      Launch demo modal
+    </button>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal-1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Iowa</h4>
+          </div>
+          <div class="modal-body">
+            <img src="img/artwork/1.jpg" alt="">
+            <h4>1824</h4>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.              
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div>
+</body>
 </html>
