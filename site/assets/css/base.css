@@ -31,15 +31,14 @@ body {
 
 /* Styles for middle strip of page just below the splash */
 .middle-gray-bar {
-  background-color: lightgray;
+  background-color: rgb(228, 229, 219);  /* dropper value, native RGB */
 }
 
 .middle-gray-bar .middle-title {
   font-size: 32px;
-  font-weight: bold;
   padding-top: 15px;
   padding-bottom: 15px;
-  text-align:center;
+  padding-left: 15%;
 }
 
 @media (max-width: 768px) { /* equivalent to bootstrap min size, without using Less */
@@ -55,20 +54,15 @@ body {
   padding-bottom: 5px;
 }
 
-.middle-gray-bar .margin-width input {
-  width: 100%;
-}
-
-.middle-gray-bar .margin-width span {
-  font-weight: bold;
-}
-
 .middle-gray-bar button {
   margin-top: 10px;
   height: 26px;
   padding-bottom: 25px;
   border-radius: 0;
   font-weight: bold;
+  background-color: rgb(209, 44, 43);  /* dropper value, native RGB */
+  color: white;
+
 }
 
 @media (max-width: 768px) { /* equivalent to bootstrap min size, without using Less */
@@ -96,21 +90,19 @@ body {
 
 /* Styles for bottom strip of page */
 .bottom-gray-bar {
-  background-color: gray;
+  background-color: rgb(195, 195, 186);  /* dropper value, native RGB */
 }
 
-.bottom-gray-bar .bottom-title {
-  color: white;
-  font-weight: bold;
+.bottom-gray-bar .padded-left {
+  font-weight: normal;
+  padding-left: 15%;
+  padding-right: 5%;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
-.bottom-gray-bar .bottom-paragraph {
-   color: white;
-}
-
-.bottom-gray-bar .padded-half {
-  padding-left:10%;
-  padding-right:10%;
+.bottom-gray-bar .padded-right {
+  padding-right: 20%;
   margin-top: 40px;
   margin-bottom: 40px;
 }
