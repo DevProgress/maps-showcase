@@ -49,7 +49,7 @@ body {
   }
 }
 
-.middle-gray-bar .margin-width {
+.middle-gray-bar .middle-button {
   padding-top: 11px;
   padding-bottom: 5px;
 }
@@ -62,13 +62,20 @@ body {
   font-weight: bold;
   background-color: rgb(209, 44, 43);  /* dropper value, native RGB */
   color: white;
-
 }
 
 @media (max-width: 768px) { /* equivalent to bootstrap min size, without using Less */
-  .middle-gray-bar .margin-width button {
-    margin-top: 0;
-    margin-bottom: 15px;
+  .middle-gray-bar .middle-title {
+    text-align: center;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .middle-button {
+    text-align: center;
+    margin-bottom: 20px;
+  } 
+  .middle-gray-bar button {
+    width: 100%;
   }
   .button-container {
     padding-left: 30px;
@@ -105,4 +112,15 @@ body {
   padding-right: 20%;
   margin-top: 40px;
   margin-bottom: 40px;
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+.bottom-gray-bar .padded-left {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.bottom-gray-bar .padded-right {
+  padding-left: 40px;
+  padding-right: 40px;
 }
