@@ -1,12 +1,48 @@
 @font-face {
-  font-family: "SharpUnity";
-  font-style: normal;
-  font-weight: 800;
-  src: url("../fonts/SharpUnity-Extrabold.ttf");
+font-family: SharpUnity;
+font-style: normal;
+font-weight: 100;
+src: url(../fonts/SharpUnity-Book.ttf) format("truetype"),url(../fonts/SharpUnity-Book.woff) format("woff"),url(../fonts/SharpUnity-Book.woff2) format("woff2");
+}
+
+@font-face {
+font-family: SharpUnity;
+font-style: italic;
+font-weight: 100;
+src: url(../fonts/SharpUnity-BookItalic.ttf) format("truetype"),url(../fonts/SharpUnity-BookItalic.woff) format("woff"),url(../fonts/SharpUnity-BookItalic.woff2) format("woff2");
+}
+
+@font-face {
+font-family: SharpUnity;
+font-style: normal;
+font-weight: 400;
+src: url(../fonts/SharpUnity-Semibold.ttf) format("truetype"),url(../fonts/SharpUnity-Semibold.woff) format("woff"),url(../fonts/SharpUnity-Semibold.woff2) format("woff2");
+}
+
+@font-face {
+font-family: SharpUnity;
+font-style: italic;
+font-weight: 400;
+src: url(../fonts/SharpUnity-SemiboldItalic.ttf) format("truetype"),url(../fonts/SharpUnity-SemiboldItalic.woff) format("woff"),url(../fonts/SharpUnity-SemiboldItalic.woff2) format("woff2");
+}
+
+@font-face {
+font-family: SharpUnity;
+font-style: normal;
+font-weight: 800;
+src: url(../fonts/SharpUnity-Extrabold.ttf) format("truetype"),url(../fonts/SharpUnity-Extrabold.woff) format("woff"),url(../fonts/SharpUnity-Extrabold.woff2) format("woff2");
+}
+
+@font-face {
+font-family: SharpUnity;
+font-style: italic;
+font-weight: 800;
+src: url(../fonts/SharpUnity-ExtraboldItalic.ttf) format("truetype"),url(../fonts/SharpUnity-ExtraboldItalic.woff) format("woff"),url(../fonts/SharpUnity-ExtraboldItalic.woff2) format("woff2");
 }
 
 body {
   font-family: "SharpUnity";
+  font-weight: 100;
 }
 
 
