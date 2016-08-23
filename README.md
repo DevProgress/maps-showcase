@@ -22,3 +22,7 @@ This is how we combine the data we ripped from the PDF and other data for the de
 # Style guide
 
 2 space indentation in js / html / css
+
+# Icons for navigation
+These are from https://github.com/google/material-design-icons
+Used under the CC attribution 4.0 liscense https://creativecommons.org/licenses/by/4.0/
