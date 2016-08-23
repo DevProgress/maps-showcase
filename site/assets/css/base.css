@@ -1,3 +1,51 @@
+@font-face {
+font-family: SharpUnity;
+font-style: normal;
+font-weight: 100;
+src: url(../fonts/SharpUnity-Book.ttf) format("truetype"),url(../fonts/SharpUnity-Book.woff) format("woff"),url(../fonts/SharpUnity-Book.woff2) format("woff2");
+}
+
+@font-face {
+font-family: SharpUnity;
+font-style: italic;
+font-weight: 100;
+src: url(../fonts/SharpUnity-BookItalic.ttf) format("truetype"),url(../fonts/SharpUnity-BookItalic.woff) format("woff"),url(../fonts/SharpUnity-BookItalic.woff2) format("woff2");
+}
+
+@font-face {
+font-family: SharpUnity;
+font-style: normal;
+font-weight: 400;
+src: url(../fonts/SharpUnity-Semibold.ttf) format("truetype"),url(../fonts/SharpUnity-Semibold.woff) format("woff"),url(../fonts/SharpUnity-Semibold.woff2) format("woff2");
+}
+
+@font-face {
+font-family: SharpUnity;
+font-style: italic;
+font-weight: 400;
+src: url(../fonts/SharpUnity-SemiboldItalic.ttf) format("truetype"),url(../fonts/SharpUnity-SemiboldItalic.woff) format("woff"),url(../fonts/SharpUnity-SemiboldItalic.woff2) format("woff2");
+}
+
+@font-face {
+font-family: SharpUnity;
+font-style: normal;
+font-weight: 800;
+src: url(../fonts/SharpUnity-Extrabold.ttf) format("truetype"),url(../fonts/SharpUnity-Extrabold.woff) format("woff"),url(../fonts/SharpUnity-Extrabold.woff2) format("woff2");
+}
+
+@font-face {
+font-family: SharpUnity;
+font-style: italic;
+font-weight: 800;
+src: url(../fonts/SharpUnity-ExtraboldItalic.ttf) format("truetype"),url(../fonts/SharpUnity-ExtraboldItalic.woff) format("woff"),url(../fonts/SharpUnity-ExtraboldItalic.woff2) format("woff2");
+}
+
+body {
+  font-family: "SharpUnity";
+  font-weight: 100;
+}
+
+
 /* Styles for the video modal */
 
 #overlayImage {
@@ -19,15 +67,14 @@
 
 /* Styles for middle strip of page just below the splash */
 .middle-gray-bar {
-  background-color: lightgray;
+  background-color: rgb(228, 229, 219);  /* dropper value, native RGB */
 }
 
 .middle-gray-bar .middle-title {
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 32px;
   padding-top: 15px;
   padding-bottom: 15px;
-  text-align:center;
+  padding-left: 15%;
 }
 
 @media (max-width: 768px) { /* equivalent to bootstrap min size, without using Less */
@@ -38,32 +85,33 @@
   }
 }
 
-.middle-gray-bar .margin-width {
+.middle-gray-bar .middle-button {
   padding-top: 11px;
   padding-bottom: 5px;
 }
 
-.middle-gray-bar .margin-width input {
-  width: 100%;
-}
-
-.middle-gray-bar .margin-width span {
-  font-weight: bold;
-}
-
-.middle-gray-bar .margin-width button {
-  margin-top: 19px;
-  width: 100%;
+.middle-gray-bar button {
+  margin-top: 10px;
   height: 26px;
-  padding-top: 3px;
+  padding-bottom: 25px;
   border-radius: 0;
   font-weight: bold;
+  background-color: rgb(209, 44, 43);  /* dropper value, native RGB */
+  color: white;
 }
 
 @media (max-width: 768px) { /* equivalent to bootstrap min size, without using Less */
-  .middle-gray-bar .margin-width button {
-    margin-top: 0;
-    margin-bottom: 15px;
+  .middle-gray-bar .middle-title {
+    text-align: center;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .middle-button {
+    text-align: center;
+    margin-bottom: 20px;
+  } 
+  .middle-gray-bar button {
+    width: 100%;
   }
   .button-container {
     padding-left: 30px;
@@ -85,21 +133,30 @@
 
 /* Styles for bottom strip of page */
 .bottom-gray-bar {
-  background-color: gray;
+  background-color: rgb(195, 195, 186);  /* dropper value, native RGB */
 }
 
-.bottom-gray-bar .bottom-title {
-  color: white;
-  font-weight: bold;
-}
-
-.bottom-gray-bar .bottom-paragraph {
-   color: white;
-}
-
-.bottom-gray-bar .padded-half {
-  padding-left:10%;
-  padding-right:10%;
+.bottom-gray-bar .padded-left {
+  font-weight: normal;
+  padding-left: 15%;
+  padding-right: 5%;
   margin-top: 40px;
   margin-bottom: 40px;
+}
+
+.bottom-gray-bar .padded-right {
+  padding-right: 20%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+.bottom-gray-bar .padded-left {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.bottom-gray-bar .padded-right {
+  padding-left: 40px;
+  padding-right: 40px;
 }
