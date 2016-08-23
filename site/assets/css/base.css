@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "SharpUnity";
+  font-style: normal;
+  font-weight: 800;
+  src: url("../fonts/SharpUnity-Extrabold.ttf");
+}
+
+body {
+  font-family: "SharpUnity";
+}
+
+
 /* Styles for the video modal */
 
 #overlayImage {
@@ -51,11 +63,10 @@
   font-weight: bold;
 }
 
-.middle-gray-bar .margin-width button {
-  margin-top: 19px;
-  width: 100%;
+.middle-gray-bar button {
+  margin-top: 10px;
   height: 26px;
-  padding-top: 3px;
+  padding-bottom: 25px;
   border-radius: 0;
   font-weight: bold;
 }
