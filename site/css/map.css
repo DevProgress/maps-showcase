@@ -1,12 +1,27 @@
-#map-stage
-{
-  background-color: rgb(242, 241, 236);
+.map-container {
+  background-color: white;
 }
 
+.map {
+  background-color: white;
+  width: 66.666%;
+  position: relative;
+  margin: 0 auto;
+}
+.map > .map-ol {
+ width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+.map-bg img {
+  width: 100%;
+}
 svg {
   display: block;
-  -webkit-filter: drop-shadow( -5px -5px 5px rgb(127, 126, 125) );
-  filter: drop-shadow( -5px -5px 5px rgb(127, 126, 125) ); /* Same syntax as box-shadow */
+  //-webkit-filter: drop-shadow( -5px -5px 5px rgb(127, 126, 125) );
+  //filter: drop-shadow( -5px -5px 5px rgb(127, 126, 125) ); /* Same syntax as box-shadow */
 }
 
 .overlay {
@@ -14,13 +29,13 @@ svg {
 }
 
 .state {
-  stroke: rgb(127, 126, 125);
-  cursor: pointer;
-  stroke-width: 2;
+ 
 }
 
 .state:hover {
-  fill: red;
+  stroke: rgb(255, 255, 255);
+  cursor: pointer;
+  stroke-width: 3;
 }
 
 .boundary {
@@ -29,4 +44,11 @@ svg {
   stroke-linejoin: round;
   stroke-linecap: round;
   vector-effect: non-scaling-stroke;
+}
+svg .state {
+  /* stroke: #000000; */
+  fill: rgba(255, 255, 255, 0.0);
+}
+svg .usa-border {
+  stroke: none;
 }

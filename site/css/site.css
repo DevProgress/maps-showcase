@@ -112,6 +112,16 @@ html, body {
   #close-modal-button { display: none; }   /* hide it elsewhere */
 }
 
+.btn-danger {
+  background-color: #e4002b;
+    border-color: #e4002b;
+}
+
+.btn-danger:hover {
+  background-color: #781818;
+  border-color: #781818;
+}
+
 .btn-close {
   background-color: #eee;
 }
