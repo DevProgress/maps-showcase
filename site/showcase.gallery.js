@@ -23,10 +23,10 @@
       
       // Bind
 
-      $('.glyphicon-arrow-left', this.$Modal).on('click', function(){
+      $('.btn-prev', this.$Modal).on('click', function(){
         Showcase.Gallery.Prev();
       });
-      $('.glyphicon-arrow-right', this.$Modal).on('click', function(){
+      $('.btn-next', this.$Modal).on('click', function(){
         Showcase.Gallery.Next();
       });
     },
