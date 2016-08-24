@@ -20,7 +20,7 @@
           console.log(arguments);
         }
       });
-      
+
       // Bind
 
       $('.btn-prev', this.$Modal).on('click', function(){
@@ -42,10 +42,11 @@
       }
 
       $(this.$Modal).attr('data-id', artwork.id);
-      $('h4', this.$Modal).text(artwork.title);
+      $('.modal-header h4', this.$Modal).text(artwork.title);
       $('.modal-body p', this.$Modal).text(artwork.description);
       $('img.artwork', this.$Modal).attr('src', 'img/artwork/' + artwork.id + '.jpg');
       $('img.pattern', this.$Modal).attr('src', 'img/pattern/' + artwork.id + '.jpg');
+      $('a.btn-danger', this.$Modal).attr('href', 'img/download/' + artwork.id + '.jpg');
       this.$Modal.modal('show');
     },
 
