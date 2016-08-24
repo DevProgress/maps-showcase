@@ -54,13 +54,12 @@ $( document ).ready(function() {
         class: 'state',
         d:path
       })
-      .on('mousedown.log', function (d) {
-        console.log(d.id);
-        setTimeout(function(){
-          $('#modal-dialog-state-1').click();
-        }, 0);
-      });
+      .on('mousedown.log', clickState);
   });
+
+  function clickState(d){
+    Showcase.Gallery.Show(d.id);
+  };
 
   function createPattern(id){
     var rotation = Math.floor(Math.random() * 360) + 1  ;
