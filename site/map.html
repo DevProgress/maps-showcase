@@ -8,15 +8,15 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
     <meta name='description' content='Map Showcase - Join Hillary'>
-    <link rel='icon' href='assets/img/favicon.ico'>
+    <link rel='icon' href='img/favicon.ico'>
 
     <title>Labor for Hillary</title>
 
-    <link href='assets/vendor/bootstrap/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='vendor/bootstrap/css/bootstrap.min.css' rel='stylesheet'>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <!-- https://github.com/Haixing-Hu/bootstrap3-ie10-viewport-bug-workaround -->
-    <link href='assets/vendor/ie10-viewport-bug-workaround.css' rel='stylesheet'>
+    <link href='vendor/ie10-viewport-bug-workaround.css' rel='stylesheet'>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -24,66 +24,66 @@
       <script src='vendor/respond.min.js'></script>
     <![endif]-->
 
-    <link href='assets/css/base.css' rel='stylesheet'>
-    <link href='assets/css/map.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="css/site.css">
+    <link rel="stylesheet" type="text/css" href="css/map.css">
+    <link rel="stylesheet" type="text/css" href="css/state.css">
 
-    <script src='assets/vendor/d3.v3.min.js'></script>
-    <script src='assets/vendor/topojson.v1.min.js'></script>
+    <script src='vendor/d3.v3.min.js'></script>
+    <script src='vendor/topojson.v1.min.js'></script>
+    
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.15.0/lodash.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="js/map.js"></script>
+    <script src="js/showcase.gallery.js"></script>
+    <script src='js/modal-controller.js'></script>
+
 
   </head>
 
   <body>
     <!-- this modal for clicking states start hidden but in the DOM -->
-    <div id='mainModal' class='modal fade' tabindex='-1' role='dialog'>
-      <div id='modalBackdrop' class='modal-backdrop fade' style='z-index: -1' onClick='modalController.hideModal()'></div>
-      <div class='modal-dialog modal-lg' role='document'>
-        <div class='modal-content'>
-          <div class='modal-body'>
-            <div id='state-title'></div>
-            <div id='modal-controls'>
-              <a id='left-arrow' onClick='modalController.previousState()'>
-                <div class='circle-background'>
-                  <span class='glyphicon glyphicon-arrow-left'></span>
-                </div>
-              </a>
-              <a id='right-arrow' onClick='modalController.nextState()'>
-                <div class='circle-background'>
-                  <span class='glyphicon glyphicon-arrow-right'></span>
-                </div>
-              </a>
-              <a id='close-button' onClick='modalController.hideModal()'>
-                <div class='circle-background'>
-                  <span class='glyphicon glyphicon-remove'></span>
-                </div>
-              </a>
-            </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-id="">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel"></h4>
+          </div>
+          <div class="modal-body">
             <div class="row">
-              <div class="col-xs-12 col-md-6">
-                <img id="historical-artifact-image"/><br />
-                <b id="historical-artifact-image-title"></b>
-                <p id="historical-artifact-data"></p>
+              <div class="col-md-6">
+                <img class="artwork" src="" alt="">
+                <h4></h4>
+                <p></p>
               </div>
-              <div class="col-xs-12 col-md-6">
-                <img id="pattern-image"/>
-                <p id="pattern-data"></p>
+              <div class="col-md-6">
+                <img class="pattern" src="" alt="">
+                <h4>Pattern</h4>
+                <a href="" class="btn btn-danger" download>Download</a>
               </div>
             </div>
-          </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
+          </div>
+          <div class="modal-footer">
+            <div class="btn-group" role="group" aria-label="...">
+              <button type="button" class="btn btn-default btn-prev">
+                <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;</button>
+              <button type="button" class="btn btn-default btn-next">
+                <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
     </div>
     <!-- end modal -->
 
 
     <div class='container-fluid'>
-      <div class='row' id='map-container-outer'>
-        <div>
-          <div id='map-container'>
-            <div class='loading-message'>Loading...</div>
-          </div>
-        </div>
-      </div>
-            <div class='middle-gray-bar row'>
+      <div id="map-stage"></div>
+      <div class='middle-gray-bar row'>
         <div class='middle-title col-sm-6'>
           Labor for Hillary
         </div>
@@ -114,7 +114,5 @@
         </div>
       </div>
     </div>
-    <script src='assets/js/map.js'></script>
-    <script src='assets/js/modal-controller.js'></script>
   </body>
 </html>

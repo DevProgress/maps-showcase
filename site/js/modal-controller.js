@@ -1,6 +1,6 @@
 var states_data;
 
-d3.json("assets/gen/states-data.json", function(error, info) {
+d3.json("gen/states-data.json", function(error, info) {
   states_data = info;
 });
 

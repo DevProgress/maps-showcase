@@ -40,30 +40,15 @@ font-weight: 800;
 src: url(../fonts/SharpUnity-ExtraboldItalic.ttf) format("truetype"),url(../fonts/SharpUnity-ExtraboldItalic.woff) format("woff"),url(../fonts/SharpUnity-ExtraboldItalic.woff2) format("woff2");
 }
 
-body {
+html, body {
+  background-color: rgb(195, 195, 186);
   font-family: "SharpUnity";
   font-weight: 100;
 }
 
-
-/* Styles for the video modal */
-
-#overlayImage {
-  cursor: pointer;
+.modal-body img {
   width: 100%;
 }
-
-/* the play icon over the main popover image  */
-.centered-icon {
-  font-size: 50px;
-  color: white;
-  position: relative;
-  margin-top: -90px;
-  left: 50%;
-  margin-left: -25px; /* half icon's width */
-  cursor: pointer;
-}
-
 
 /* Styles for middle strip of page just below the splash */
 .middle-gray-bar {
@@ -129,11 +114,6 @@ body {
 
 .btn-close {
   background-color: #eee;
-}
-
-/* Styles for bottom strip of page */
-.bottom-gray-bar {
-  background-color: rgb(195, 195, 186);  /* dropper value, native RGB */
 }
 
 .bottom-gray-bar .padded-left {

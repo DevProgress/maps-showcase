@@ -8,15 +8,15 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
     <meta name='description' content='Women for Hillary'>
-    <link rel='icon' href='assets/img/favicon.ico'>
+    <link rel='icon' href='img/favicon.ico'>
 
     <title>Map Showcase - Join Hillary</title>
 
-    <link href='assets/vendor/bootstrap/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='vendor/bootstrap/css/bootstrap.min.css' rel='stylesheet'>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <!-- https://github.com/Haixing-Hu/bootstrap3-ie10-viewport-bug-workaround -->
-    <link href='assets/vendor/ie10-viewport-bug-workaround.css' rel='stylesheet'>
+    <link href='vendor/ie10-viewport-bug-workaround.css' rel='stylesheet'>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -24,7 +24,8 @@
       <script src='vendor/respond.min.js'></script>
     <![endif]-->
 
-    <link href='assets/css/base.css' rel='stylesheet'>
+    <link href='css/site.css' rel='stylesheet'>
+    <link href='css/video-page.css' rel='stylesheet'>
 
   </head>
 
@@ -32,15 +33,15 @@
     <div class='container-fluid'>
       <div class='row'>
         <div>
-          <img id='overlayImage' src='assets/img/static-photo-video.png' title='Click to play the video.' onClick='videoModalController.playVideo()' />
+          <img id='overlayImage' src='img/static-photo-video.png' title='Click to play the video.' onClick='videoModalController.playVideo()' />
           <span class='glyphicon glyphicon-play-circle centered-icon' onClick='videoModalController.playVideo()'></span>
         </div>
         <!-- video code example, the high-voted answer, not the -1 answer on top:
              http://stackoverflow.com/questions/14616453/image-placeholder-fallback-for-html5-video -->
         <video controls style='width:100%; display:none'>
-          <source src='assets/vid/whitehouse-women.mov' type='video/mp4; codecs='avc1.42E01E, mp4a.40.2'' />
+          <source src='vid/whitehouse-women.mov' type='video/mp4; codecs='avc1.42E01E, mp4a.40.2'' />
           <!-- source src='FOO.webm' type='video/webm; codecs='vp8, vorbis'' / -->
-          <img src='assets/img/static-photo-video.png' style='width:100%' title='Your browser does not support the <video> tag'>
+          <img src='img/static-photo-video.png' style='width:100%' title='Your browser does not support the <video> tag'>
         </video>
       </div>
 
@@ -76,5 +77,5 @@
       </div>
     </div>
   </body>
-  <script src='assets/js/video-modal-controller.js'></script>
+  <script src='js/video-modal-controller.js'></script>
 </html>
