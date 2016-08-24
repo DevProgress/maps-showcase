@@ -15,7 +15,7 @@ svg {
 
 .state {
   stroke: rgb(127, 126, 125);
-  pointer-events: all;
+  cursor: pointer;
   stroke-width: 2;
 }
 
