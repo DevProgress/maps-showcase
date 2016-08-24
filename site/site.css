@@ -56,6 +56,10 @@ html, body {
 	background-color: rgb(229, 228, 218);
 }
 
+#btn-join-us{
+	margin: 20px 0 10px 0;
+}
+
 .modal-body img
 {
 	width: 100%;
