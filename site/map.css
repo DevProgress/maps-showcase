@@ -4,6 +4,7 @@
 }
 
 svg {
+  display: block;
   -webkit-filter: drop-shadow( -5px -5px 5px rgb(127, 126, 125) );
   filter: drop-shadow( -5px -5px 5px rgb(127, 126, 125) ); /* Same syntax as box-shadow */
 }
