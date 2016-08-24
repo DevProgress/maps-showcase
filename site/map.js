@@ -9,7 +9,7 @@ $( document ).ready(function() {
   var maxHeight = docHeight * 0.5;
   var width = $('#map-stage').width();
   var height = width * 0.5;
-  var scale0 = width;
+  var scale0 = height;
 
   if (height > maxHeight){
     height = maxHeight;
