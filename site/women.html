@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+  <head>
+    <!-- This header content from https://getbootstrap.com/examples/grid/ -->
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <!-- meta name='viewport' content='width=device-width, initial-scale=1'-->
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <meta name='description' content='Women for Hillary'>
+    <link rel='icon' href='img/favicon.ico'>
+
+    <title>Map Showcase - Join Hillary</title>
+
+    <link href='vendor/bootstrap/css/bootstrap.min.css' rel='stylesheet'>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!-- https://github.com/Haixing-Hu/bootstrap3-ie10-viewport-bug-workaround -->
+    <link href='vendor/ie10-viewport-bug-workaround.css' rel='stylesheet'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src='vendor/html5shiv.min.js'></script>
+      <script src='vendor/respond.min.js'></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="css/site.css">
+    <link rel="stylesheet" type="text/css" href="css/video-page.css">
+
+  </head>
+
+  <body>
+    <div class='container-fluid'>
+      <div class='row'>
+        <div class="outer-video-container">
+          <div class="video-container" onclick="showAndPlayVideo()">
+            <img id="overlayImage" src="img/static-photo-video.png" title='Click to play the video.' />
+            <span class="glyphicon glyphicon-play-circle centered-icon"></span>
+            <iframe id="video_iframe" style="display: none;" id=video_iframe class="video" frameborder="0" allowfullscreen></iframe>
+          </div>
+
+        </div>
+      </div>
+
+      <div id='middle-gray-bar' class='middle-gray-bar row'>
+        <div class='middle-title col-sm-6'>
+          Women for Hillary
+        </div>
+
+        <div class='middle-button col-sm-6'>
+          <div class='button-container'>
+            <button type='button' class='btn'>Join us</button>
+          </div>
+        </div>
+      </div>
+
+      <div class='bottom-gray-bar row'>
+        <div class='col-sm-6 padded-left'>
+          <div class='bottom-title'>
+            About the artist:
+          </div>
+          <div class='bottom-paragraph'>
+            Lorem ipsum dolor sit amet, quo ex platonem hendrerit, per habeo scripta id, et duis albucius comprehensam eam. Civibus voluptatum dissentias vel ad. Ut quem delectus his, ut sed posidonium assueverit. Quo dico tota ex, mea modus eruditi voluptua ea, vel te quas electram ocurreret. Ex eos case laoreet, qui in porro everti honestatis, ad adhuc debitis pri. Nec feugiat tincidunt conclusionemque ea, ius dicam reprehendunt et.
+          </div>
+        </div>
+        <div class='col-sm-6 padded-right'>
+          <div class='bottom-title'>
+            About the project:
+          </div>
+          <div class='bottom-paragraph'>
+            Lorem ipsum dolor sit amet, quo ex platonem hendrerit, per habeo scripta id, et duis albucius comprehensam eam. Civibus voluptatum dissentias vel ad. Ut quem delectus his, ut sed posidonium assueverit. Quo dico tota ex, mea modus eruditi voluptua ea, vel te quas electram ocurreret. Ex eos case laoreet, qui in porro everti honestatis, ad adhuc debitis pri. Nec feugiat tincidunt conclusionemque ea, ius dicam reprehendunt et.
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src='js/video-play.js'></script>
+</html>

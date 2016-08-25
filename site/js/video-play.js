@@ -26,3 +26,10 @@ var videoModalController = (function () {
   }
 
 })();
+
+function showAndPlayVideo() {
+  var videoFrame = document.getElementById('video_iframe'); 
+  videoFrame.style.display='block'; 
+  document.getElementById('overlayImage').style.display='none';
+  document.getElementById('video_iframe').src='https://www.youtube.com/embed/KBLzGTwZbRE?autoplay=1';
+}
