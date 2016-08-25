@@ -36,7 +36,7 @@ var modalController = (function () {
   }
 
   var showState = function (stateID) {
-    state = states_data[20]; // hard code kansas
+    state = states_data[stateID]; // hard code kansas
     selectedStateIdx = state.id;
     modal.style.display = 'block';
     setTimeout(function () {

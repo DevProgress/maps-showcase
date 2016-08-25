@@ -17,7 +17,7 @@ def main():
     with open('data/showcase-text.json') as data_file:
         states_text = json.load(data_file)
 
-
+    new_dict = {}
     for key in states_data:
         states_data[key]['stateName'] = states_names[states_data[key]['stateCode']]
         try:
@@ -28,9 +28,10 @@ def main():
             states_data[key]['historicalArtifactData'] = states_text[states_data[key]['stateName']]['description']
         except:
             print("No pattern title/description for {}").format(states_data[key]['stateName'])
+        new_dict[states_data[key]['stateCode']] = states_data[key]
 
     with open('gen/states-data.json', 'w') as outfile:
-        json.dump(states_data, outfile)
+        json.dump(new_dict, outfile)
 
 
 main()
