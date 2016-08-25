@@ -29,7 +29,7 @@
 
     <script src='vendor/d3.v3.min.js'></script>
     <script src='vendor/topojson.v1.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js'></script>
+    <script src='vendor/hammer-2.0.8.js'></script>
   </head>
 
   <body>
@@ -125,6 +125,15 @@
           Lorem ipsum dolor sit amet, quo ex platonem hendrerit, per habeo scripta id, et duis albucius comprehensam eam. Civibus voluptatum dissentias vel ad. Ut quem delectus his, ut sed posidonium assueverit. Quo dico tota ex, mea modus eruditi voluptua ea, vel te quas electram ocurreret. Ex eos case laoreet, qui in porro everti honestatis, ad adhuc debitis pri. Nec feugiat tincidunt conclusionemque ea, ius dicam reprehendunt et.
         </div>
       </div>
+      <div class='col-sm-12 padded-left'>
+        <div class='bottom-title attribution-title'>
+          Paid for by Hillary for America
+        </div>
+        <div class='attribution'>
+          <a href=#>Terms of Service</a> &amp; <a href=#>Privacy Policy</a>
+        </div>
+      </div>
+
     </div>
 
     <!-- this modal for clicking states start hidden but in the DOM -->
@@ -141,12 +150,12 @@
           <div class='modal-body'>
             <div class="row">
               <div class="col-xs-12 col-md-6">
-                <img id="historical-artifact-image"/><br />
+                <img id="historical-artifact-image" style='height:200px;width:auto'/><br />
                 <b id="historical-artifact-image-title"></b>
                 <p id="historical-artifact-data"></p>
               </div>
               <div class="col-xs-12 col-md-6">
-                <img id="pattern-image"/>
+                <img id="pattern-image"  style='height:200px;width:auto' />
                 <p id="pattern-data"></p>
               </div>
             </div>

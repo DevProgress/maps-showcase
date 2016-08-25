@@ -18,18 +18,17 @@ var modalController = (function () {
       modal.style.display = 'none';
     }, 250); //long enough for animation to wrap up
 
-    g.selectAll("path").classed("active", false);
   };
 
   var populateStateData = function (state) {
-    document.getElementById('historical-artifact-image').src = 'img/artwork/' + state.stateCode + '/' + modalController.stateIndex + '.png';
+    document.getElementById('historical-artifact-image').src = 'img/artwork/' + state.stateCode + '/' + modalController.stateIndex + '.jpg';
     // state.historicalArtifactImage;
     document.getElementById('pattern-image').src = 'img/pattern/' + state.stateCode + '/' + modalController.stateIndex + '.png';
     // state.patternImage;
 
     document.getElementById('historical-artifact-image').title = state.title;
     document.getElementById('pattern-image').title = state.title;
-    document.getElementById('pattern-data').innerText = state.patternData;
+    document.getElementById('pattern-data').innerText = 'Pattern';
     document.getElementById('state-title').innerText = state.stateName;
     document.getElementById('historical-artifact-image-title').innerText = state.title;
     document.getElementById('historical-artifact-data').innerText = state.description;
@@ -53,11 +52,19 @@ var modalController = (function () {
 
   var nextState = function () {
     modalController.stateIndex += 1;
+    var pastEnd = (modalController.stateIndex > modalController.state.patternCount && 
+                   modalController.stateIndex > modalController.state.artworkCount);
+    if (pastEnd) {
+      modalController.stateIndex = 1;
+    }
     populateStateData(modalController.state);
   }
 
   var previousState = function () {
     modalController.stateIndex -= 1;
+    if (modalController.stateIndex <= 0) {
+      modalController.stateIndex = Math.max(modalController.state.patternCount, modalController.state.artworkCount);
+    }
     populateStateData(modalController.state);
   }
 
