@@ -35,7 +35,7 @@
 
   <body>
      <div id="map-container" class="map-container">
-       <div class="map">
+       <div id="map" class="map">
         <div class="map-bg">
           <img src="img/map/patchwork-fpo.png" />
         </div>
@@ -97,7 +97,6 @@
     </div>
     </div>
 
-    <div class='container-fluid'>
       <div class='middle-gray-bar row'>
         <div class='middle-title col-sm-6'>
           Labor for Hillary
@@ -128,7 +127,6 @@
           </div>
         </div>
       </div>
-    </div>
     </div>
 
     <!-- this modal for clicking states start hidden but in the DOM -->
@@ -252,7 +250,7 @@
       });
     }
     $( document ).ready(function() {
-      var mapDiv = document.getElementById('map-container');
+      var mapDiv = document.getElementById('map');
       hammerIt(mapDiv)
       
     });

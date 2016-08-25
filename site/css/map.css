@@ -1,5 +1,6 @@
 .map-container {
   background-color: white;
+  overflow: hidden;
 }
 
 .map {
