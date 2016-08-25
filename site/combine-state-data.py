@@ -30,7 +30,7 @@ def main():
             print("No pattern title/description for {}").format(states_data[key]['stateName'])
         new_dict[states_data[key]['stateCode']] = states_data[key]
 
-    with open('gen/states-data.json', 'w') as outfile:
+    with open('data/gen/states-data.json', 'w') as outfile:
         json.dump(new_dict, outfile)
 
 
