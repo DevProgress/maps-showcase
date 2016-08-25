@@ -18,7 +18,6 @@ var modalController = (function () {
       modal.style.display = 'none';
     }, 250); //long enough for animation to wrap up
 
-    g.selectAll("path").classed("active", false);
   };
 
   var populateStateData = function (state) {
