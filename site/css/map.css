@@ -1,0 +1,50 @@
+.map-container {
+  background-color: white;
+  overflow-y: hidden;
+}
+
+.map {
+  background-color: white;
+  width: 66.666%;
+  position: relative;
+  margin: 0 auto;
+}
+.map > .map-ol {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+.map-bg img {
+  width: 100%;
+}
+
+svg {
+  display: block;
+}
+svg .state {
+  /* stroke: #000000; */
+  fill: rgba(255, 255, 255, 0.0);
+}
+svg .usa-border {
+  stroke: none;
+}
+
+.overlay {
+  fill: none;
+}
+
+.state:hover {
+  stroke: rgb(255, 255, 255);
+  cursor: pointer;
+  stroke-width: 3;
+}
+
+.boundary {
+  fill: none;
+  stroke: #fff;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
