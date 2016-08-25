@@ -137,7 +137,7 @@
           <div class='modal-header'>
             <span id='state-title'></span>
             <a id='close-button' onClick='modalController.hideModal()' class="pull-right">
-                <span class='glyphicon glyphicon-remove'></span>
+                <span class=+'glyphicon glyphicon-remove'></span>
             </a>
           </div>
           <div class='modal-body'>
@@ -154,9 +154,9 @@
             </div>
             <div class="modal-footer">
             <div class="btn-group" role="group" aria-label="...">
-              <button type="button" class="btn btn-default btn-prev" onClick='modalController.previousState()'>
+              <button id="nextButton" type="button" class="btn btn-default btn-prev" onClick='modalController.previousState()'>
                 <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;</button>
-              <button type="button" class="btn btn-default btn-next" onClick='modalController.nextState()'>
+              <button id="prevButton" type="button" class="btn btn-default btn-next" onClick='modalController.nextState()'>
                 <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;
               </button>
             </div>

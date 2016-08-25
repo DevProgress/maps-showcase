@@ -44,6 +44,11 @@ var modalController = (function () {
       background.className = 'modal-backdrop fade in';
     }, 50); //long enough to be at least one animation frame, so that the animation triggers
     populateStateData(modalController.state);
+    
+    var hasSingleImage = (modalController.state.patternCount <= 1 && modalController.state.artworkCount <= 1);
+    document.getElementById('nextButton').disabled = hasSingleImage;
+    document.getElementById('prevButton').disabled = hasSingleImage;
+
   };
 
   var nextState = function () {

@@ -35,6 +35,8 @@ def main():
             pattern_dir = 'img/pattern/' + states_data[key]['stateCode']
             states_data[key]['patternCount'] = len([name for name in os.listdir(pattern_dir)])
         except:
+            states_data[key]['artworkCount'] = 0
+            states_data[key]['patternCount'] = 0
             print("No images for {}".format(states_data[key]['stateCode']))
 
         # base data started keyed to ints, but we key to stateCode instead
