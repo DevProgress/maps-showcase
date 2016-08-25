@@ -1,0 +1,155 @@
+@font-face {
+font-family: SharpUnity;
+font-style: normal;
+font-weight: 100;
+src: url(../fonts/SharpUnity-Book.ttf) format("truetype"),url(../fonts/SharpUnity-Book.woff) format("woff"),url(../fonts/SharpUnity-Book.woff2) format("woff2");
+}
+
+@font-face {
+font-family: SharpUnity;
+font-style: italic;
+font-weight: 100;
+src: url(../fonts/SharpUnity-BookItalic.ttf) format("truetype"),url(../fonts/SharpUnity-BookItalic.woff) format("woff"),url(../fonts/SharpUnity-BookItalic.woff2) format("woff2");
+}
+
+@font-face {
+font-family: SharpUnity;
+font-style: normal;
+font-weight: 400;
+src: url(../fonts/SharpUnity-Semibold.ttf) format("truetype"),url(../fonts/SharpUnity-Semibold.woff) format("woff"),url(../fonts/SharpUnity-Semibold.woff2) format("woff2");
+}
+
+@font-face {
+font-family: SharpUnity;
+font-style: italic;
+font-weight: 400;
+src: url(../fonts/SharpUnity-SemiboldItalic.ttf) format("truetype"),url(../fonts/SharpUnity-SemiboldItalic.woff) format("woff"),url(../fonts/SharpUnity-SemiboldItalic.woff2) format("woff2");
+}
+
+@font-face {
+font-family: SharpUnity;
+font-style: normal;
+font-weight: 800;
+src: url(../fonts/SharpUnity-Extrabold.ttf) format("truetype"),url(../fonts/SharpUnity-Extrabold.woff) format("woff"),url(../fonts/SharpUnity-Extrabold.woff2) format("woff2");
+}
+
+@font-face {
+font-family: SharpUnity;
+font-style: italic;
+font-weight: 800;
+src: url(../fonts/SharpUnity-ExtraboldItalic.ttf) format("truetype"),url(../fonts/SharpUnity-ExtraboldItalic.woff) format("woff"),url(../fonts/SharpUnity-ExtraboldItalic.woff2) format("woff2");
+}
+
+html, body {
+  background-color: rgb(195, 195, 186);
+  font-family: "SharpUnity";
+  font-weight: 100;
+}
+
+.modal-body img {
+  width: 100%;
+}
+
+/* Styles for middle strip of page just below the splash */
+.middle-gray-bar {
+  background-color: rgb(228, 229, 219);  /* dropper value, native RGB */
+}
+
+.middle-gray-bar .middle-title {
+  font-size: 32px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15%;
+}
+
+@media (max-width: 768px) { /* equivalent to bootstrap min size, without using Less */
+  .middle-gray-bar .middle-title {
+    text-align:left;
+    margin-left: 15px;
+    padding-bottom: 0;
+  }
+}
+
+.middle-gray-bar .middle-button {
+  padding-top: 11px;
+  padding-bottom: 5px;
+}
+
+.middle-gray-bar button {
+  margin-top: 10px;
+  height: 26px;
+  padding-bottom: 25px;
+  border-radius: 0;
+  font-weight: bold;
+  background-color: rgb(209, 44, 43);  /* dropper value, native RGB */
+  color: white;
+}
+
+@media (max-width: 768px) { /* equivalent to bootstrap min size, without using Less */
+  .middle-gray-bar .middle-title {
+    text-align: center;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .middle-button {
+    text-align: center;
+    margin-bottom: 20px;
+  } 
+  .middle-gray-bar button {
+    width: 100%;
+  }
+  .button-container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  #close-modal-button { display: block; }  /* show it on small screens */
+}
+
+@media screen and (min-width: 768px){
+  #close-modal-button { display: none; }   /* hide it elsewhere */
+}
+
+.btn-danger {
+  background-color: #e4002b;
+    border-color: #e4002b;
+}
+
+.btn-danger:hover {
+  background-color: #781818;
+  border-color: #781818;
+}
+
+#close-button {
+  color: rgb(195, 195, 186);
+}
+
+.bottom-gray-bar .bottom-title {
+  font-weight: 800;
+}
+
+.bottom-gray-bar .padded-left {
+  padding-left: 15%;
+  padding-right: 5%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.bottom-gray-bar .padded-right {
+  padding-right: 20%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+.bottom-gray-bar .padded-left {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.bottom-gray-bar .padded-right {
+  padding-left: 40px;
+  padding-right: 40px;
+}
