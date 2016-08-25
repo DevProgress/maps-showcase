@@ -5,12 +5,17 @@
   width: 100%;
 }
 
+/* We shouldn't need this hack to keep the play button over the video, but it works for now. */
+.video-container {
+  margin-bottom: -55px;
+}
+
 /* the play icon over the main popover image  */
 .centered-icon {
   font-size: 50px;
   color: white;
   position: relative;
-  margin-top: -90px;
+  top: -90px;
   left: 50%;
   margin-left: -25px; /* half icon's width */
   cursor: pointer;

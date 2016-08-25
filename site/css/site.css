@@ -126,8 +126,11 @@ html, body {
   color: rgb(195, 195, 186);
 }
 
+.bottom-gray-bar .bottom-title {
+  font-weight: 800;
+}
+
 .bottom-gray-bar .padded-left {
-  font-weight: normal;
   padding-left: 15%;
   padding-right: 5%;
   margin-top: 40px;
