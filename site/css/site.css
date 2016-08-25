@@ -60,6 +60,7 @@ html, body {
   padding-top: 15px;
   padding-bottom: 15px;
   padding-left: 15%;
+  font-weight: 800;
 }
 
 @media (max-width: 768px) { /* equivalent to bootstrap min size, without using Less */
@@ -104,6 +105,11 @@ html, body {
   }
 }
 
+#state-title {
+  font-size: 28px;
+  font-weight: 800;
+}
+
 @media screen and (min-width: 0px) and (max-width: 768px) {
   #close-modal-button { display: block; }  /* show it on small screens */
 }
@@ -126,6 +132,10 @@ html, body {
   color: rgb(195, 195, 186);
 }
 
+.bottom-gray-bar {
+  font-weight: 400;
+}
+
 .bottom-gray-bar .bottom-title {
   font-weight: 800;
 }
@@ -141,6 +151,16 @@ html, body {
   padding-right: 20%;
   margin-top: 40px;
   margin-bottom: 40px;
+}
+
+.bottom-gray-bar .attribution-title {
+  font-size: .8em;
+}
+
+.bottom-gray-bar .attribution a {
+  font-size: .8em;
+  color: black;
+  text-decoration: underline;
 }
 
 @media screen and (min-width: 0px) and (max-width: 768px) {
