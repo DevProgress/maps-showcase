@@ -9,7 +9,7 @@ var modalController = (function () {
 
   var modal = document.getElementById('mainModal');
   var background = document.getElementById('modalBackdrop');
-
+  
   var hideModal = function () {
     modal.className = 'modal fade';
     background.className = 'modal-backdrop fade';
@@ -18,6 +18,8 @@ var modalController = (function () {
       modal.style.display = 'none';
     }, 250); //long enough for animation to wrap up
 
+    // when modal hides, re-allow body to scroll
+    document.getElementsByTagName("body")[0].className = "";
   };
 
   var populateStateData = function (state) {
@@ -48,6 +50,8 @@ var modalController = (function () {
     document.getElementById('nextButton').disabled = hasSingleImage;
     document.getElementById('prevButton').disabled = hasSingleImage;
 
+    // when modal shows, prevent body from scrolling
+    document.getElementsByTagName("body")[0].className = "modal-open";
   };
 
   var nextState = function () {
