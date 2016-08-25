@@ -7,15 +7,12 @@ d3.json("data/gen/states-data.json", function(error, info) {
 
 var modalController = (function () {
 
-  var selectedStateIdx = null;
-
   var modal = document.getElementById('mainModal');
   var background = document.getElementById('modalBackdrop');
 
   var hideModal = function () {
     modal.className = 'modal fade';
     background.className = 'modal-backdrop fade';
-    selectedStateIdx = null;
 
     setTimeout(function () {
       modal.style.display = 'none';
@@ -25,62 +22,38 @@ var modalController = (function () {
   };
 
   var populateStateData = function (state) {
-    document.getElementById('historical-artifact-image').src = state.historicalArtifactImage;
-    document.getElementById('historical-artifact-image').title = state.historicalArtifactImageTitle;
-    document.getElementById('pattern-image').src = state.patternImage;
-    document.getElementById('pattern-image').title = state.patternImageTitle;
+    document.getElementById('historical-artifact-image').src = 'img/artwork/' + state.stateCode + '/' + modalController.stateIndex + '.png';
+    // state.historicalArtifactImage;
+    document.getElementById('pattern-image').src = 'img/pattern/' + state.stateCode + '/' + modalController.stateIndex + '.png';
+    // state.patternImage;
+
+    document.getElementById('historical-artifact-image').title = state.title;
+    document.getElementById('pattern-image').title = state.title;
     document.getElementById('pattern-data').innerText = state.patternData;
     document.getElementById('state-title').innerText = state.stateName;
-    document.getElementById('historical-artifact-image-title').innerText = state.historicalArtifactImageTitle;
-    document.getElementById('historical-artifact-data').innerText = state.historicalArtifactData;
+    document.getElementById('historical-artifact-image-title').innerText = state.title;
+    document.getElementById('historical-artifact-data').innerText = state.description;
   }
 
   var showState = function (stateID) {
-    state = states_data[stateID]; // hard code kansas
-    selectedStateIdx = state.id;
+    modalController.stateIndex = 1;
+    modalController.state = states_data[stateID]; // hard code kansas
     modal.style.display = 'block';
     setTimeout(function () {
       modal.className = 'modal fade in';
       background.className = 'modal-backdrop fade in';
     }, 50); //long enough to be at least one animation frame, so that the animation triggers
-    populateStateData(state);
+    populateStateData(modalController.state);
   };
 
   var nextState = function () {
-    g.selectAll("path").classed("active", false);
-
-    selectedStateIdx += 1;
-    // because state ids are not contiguous
-    while(!states_data.hasOwnProperty(selectedStateIdx)){
-      selectedStateIdx += 1;
-      if (selectedStateIdx >= 57){
-        selectedStateIdx = 1;
-      }
-    }
-
-    g.selectAll("path").filter(function (d) { return d.id === selectedStateIdx;}).classed("active", true)
-    var state = states_data[selectedStateIdx];
-    state.id = selectedStateIdx;
-    populateStateData(state);
+    modalController.stateIndex += 1;
+    populateStateData(modalController.state);
   }
 
   var previousState = function () {
-    g.selectAll("path").classed("active", false);
-
-
-    selectedStateIdx -= 1;
-    // because state ids are not contiguous
-    while(!states_data.hasOwnProperty(selectedStateIdx)){
-      selectedStateIdx -= 1;
-      if (selectedStateIdx <= 0){
-        selectedStateIdx = 56;
-      }
-    }
-
-    g.selectAll("path").filter(function (d) { return d.id === selectedStateIdx;}).classed("active", true)
-    var state = states_data[selectedStateIdx];
-    state.id = selectedStateIdx;
-    populateStateData(state);
+    modalController.stateIndex -= 1;
+    populateStateData(modalController.state);
   }
 
   return {

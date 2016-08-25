@@ -134,25 +134,13 @@
       <div id='modalBackdrop' class='modal-backdrop fade' style='z-index: -1' onClick='modalController.hideModal()'></div>
       <div class='modal-dialog modal-lg' role='document'>
         <div class='modal-content'>
+          <div class='modal-header'>
+            <span id='state-title'></span>
+            <a id='close-button' onClick='modalController.hideModal()' class="pull-right">
+                <span class='glyphicon glyphicon-remove'></span>
+            </a>
+          </div>
           <div class='modal-body'>
-            <div id='state-title'></div>
-            <div id='modal-controls'>
-              <a id='left-arrow' onClick='modalController.previousState()'>
-                <div class='circle-background'>
-                  <span class='glyphicon glyphicon-arrow-left'></span>
-                </div>
-              </a>
-              <a id='right-arrow' onClick='modalController.nextState()'>
-                <div class='circle-background'>
-                  <span class='glyphicon glyphicon-arrow-right'></span>
-                </div>
-              </a>
-              <a id='close-button' onClick='modalController.hideModal()'>
-                <div class='circle-background'>
-                  <span class='glyphicon glyphicon-remove'></span>
-                </div>
-              </a>
-            </div>
             <div class="row">
               <div class="col-xs-12 col-md-6">
                 <img id="historical-artifact-image"/><br />
@@ -164,6 +152,15 @@
                 <p id="pattern-data"></p>
               </div>
             </div>
+            <div class="modal-footer">
+            <div class="btn-group" role="group" aria-label="...">
+              <button type="button" class="btn btn-default btn-prev" onClick='modalController.previousState()'>
+                <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;</button>
+              <button type="button" class="btn btn-default btn-next" onClick='modalController.nextState()'>
+                <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;
+              </button>
+            </div>
+          </div>
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
       </div>
