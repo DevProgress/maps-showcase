@@ -1,6 +1,6 @@
 .map-container {
   background-color: white;
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 .map {
@@ -10,7 +10,7 @@
   margin: 0 auto;
 }
 .map > .map-ol {
- width: 100%;
+  width: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -19,16 +19,20 @@
 .map-bg img {
   width: 100%;
 }
+
 svg {
   display: block;
+}
+svg .state {
+  /* stroke: #000000; */
+  fill: rgba(255, 255, 255, 0.0);
+}
+svg .usa-border {
+  stroke: none;
 }
 
 .overlay {
   fill: none;
-}
-
-.state {
- 
 }
 
 .state:hover {
@@ -43,11 +47,4 @@ svg {
   stroke-linejoin: round;
   stroke-linecap: round;
   vector-effect: non-scaling-stroke;
-}
-svg .state {
-  /* stroke: #000000; */
-  fill: rgba(255, 255, 255, 0.0);
-}
-svg .usa-border {
-  stroke: none;
 }

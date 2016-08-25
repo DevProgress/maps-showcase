@@ -122,8 +122,8 @@ html, body {
   border-color: #781818;
 }
 
-.btn-close {
-  background-color: #eee;
+#close-button {
+  color: rgb(195, 195, 186);
 }
 
 .bottom-gray-bar .padded-left {
