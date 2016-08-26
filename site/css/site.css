@@ -50,6 +50,13 @@ html, body {
   width: 100%;
 }
 
+.modal-body h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 800;
+}
+
 /* Styles for middle strip of page just below the splash */
 .middle-gray-bar {
   background-color: rgb(228, 229, 219);  /* dropper value, native RGB */
@@ -152,11 +159,11 @@ html, body {
 }
 
 .bottom-gray-bar .attribution-title {
-  font-size: .8em;
+  font-size: 12px;
 }
 
 .bottom-gray-bar .attribution a {
-  font-size: .8em;
+  font-size: 12px;
   color: black;
   text-decoration: underline;
 }
