@@ -44,6 +44,12 @@ html, body {
   background-color: rgb(195, 195, 186);
   font-family: "SharpUnity";
   font-weight: 100;
+  overflow-x: hidden;
+}
+
+.map-container {
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .modal-body img {
@@ -185,4 +191,24 @@ html, body {
 body.modal-open {
   overflow: hidden;
   position: fixed;
+}
+
+/* show a hint about zooming on mobile */
+.mobile-hint-container {
+  text-align: center;
+  background-color: white;
+}
+
+.mobile-hint {  
+  display: inline-block; 
+  margin: 10px auto 10px auto;
+  padding: 5px;
+  background-color: rgb(241, 241, 241);  /* dropper value, native RGB */  
+  font-weight: 400;
+}
+
+.mobile-hint .glyphicon {
+  position: relative;
+  top: 2px;
+
 }
