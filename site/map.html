@@ -95,7 +95,7 @@
         </div>
       </div>
     </div>
-    <div class='mobile-hint-container hidden-sm hidden-md hidden-lg'>
+    <div id='mobile-hint-container' class='mobile-hint-container hidden-sm hidden-md hidden-lg'>
       <div class='mobile-hint'><span class='glyphicon glyphicon-search'></span>&nbsp;&nbsp;Pinch to Zoom</div>
     </div>
 
@@ -252,6 +252,9 @@
               transform =
                   "translate3d(" + posX + "px," + posY + "px, 0) " +
                   "scale3d(" + scale + ", " + scale + ", 1)";
+                  document.getElementById('mobile-hint-container').style.display = 'none'; 
+          } else {
+                  document.getElementById('mobile-hint-container').style.display = 'block';             
           }
           if (transform) {
               el.style.webkitTransform = transform;
