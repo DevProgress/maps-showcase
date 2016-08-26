@@ -78,12 +78,20 @@ html, body {
 
 .middle-gray-bar button {
   margin-top: 10px;
+}
+
+.btn-danger {
   height: 26px;
   padding-bottom: 25px;
   border-radius: 0;
   font-weight: bold;
   background-color: rgb(209, 44, 43);  /* dropper value, native RGB */
-  color: white;
+  border-color: #e4002b;
+}
+
+.btn-danger:hover {
+  background-color: #781818;
+  border-color: #781818;
 }
 
 @media (max-width: 768px) { /* equivalent to bootstrap min size, without using Less */
@@ -116,16 +124,6 @@ html, body {
 
 @media screen and (min-width: 768px){
   #close-modal-button { display: none; }   /* hide it elsewhere */
-}
-
-.btn-danger {
-  background-color: #e4002b;
-    border-color: #e4002b;
-}
-
-.btn-danger:hover {
-  background-color: #781818;
-  border-color: #781818;
 }
 
 #close-button {
