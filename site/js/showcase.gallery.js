@@ -9,7 +9,7 @@ var modalController = (function () {
 
   var modal = document.getElementById('mainModal');
   var background = document.getElementById('modalBackdrop');
-  
+
   var hideModal = function () {
     modal.className = 'modal fade';
     background.className = 'modal-backdrop fade';
@@ -31,6 +31,7 @@ var modalController = (function () {
     document.getElementById('historical-artifact-image').title = state.title;
     document.getElementById('pattern-image').title = state.title;
     document.getElementById('pattern-data').innerText = 'Pattern';
+    document.getElementById('download-pdf').href = 'data/download-pdf/' + state.stateCode + '.pdf';
     document.getElementById('state-title').innerText = state.stateName;
     document.getElementById('historical-artifact-image-title').innerText = state.title;
     document.getElementById('historical-artifact-data').innerText = state.description;
@@ -45,7 +46,7 @@ var modalController = (function () {
       background.className = 'modal-backdrop fade in';
     }, 50); //long enough to be at least one animation frame, so that the animation triggers
     populateStateData(modalController.state);
-    
+
     var hasSingleImage = (modalController.state.patternCount <= 1 && modalController.state.artworkCount <= 1);
     document.getElementById('nextButton').disabled = hasSingleImage;
     document.getElementById('prevButton').disabled = hasSingleImage;
@@ -56,7 +57,7 @@ var modalController = (function () {
 
   var nextState = function () {
     modalController.stateIndex += 1;
-    var pastEnd = (modalController.stateIndex > modalController.state.patternCount && 
+    var pastEnd = (modalController.stateIndex > modalController.state.patternCount &&
                    modalController.stateIndex > modalController.state.artworkCount);
     if (pastEnd) {
       modalController.stateIndex = 1;
