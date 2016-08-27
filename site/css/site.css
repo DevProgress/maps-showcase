@@ -52,15 +52,31 @@ html, body {
   padding-bottom: 60px;
 }
 
-.modal-body img {
-  width: 100%;
-}
-
 .modal-body h3 {
   margin-top: 10px;
   margin-bottom: 10px;
   font-size: 16px;
   font-weight: 800;
+}
+
+#col-artwork
+{
+  text-align: center;
+}
+
+#col-pattern
+{
+  text-align: center;
+}
+
+#historical-artifact-image
+{
+  max-height: 300px;
+}
+
+#pattern-image
+{
+  max-height: 300px;
 }
 
 /* Styles for middle strip of page just below the splash */
@@ -116,7 +132,7 @@ html, body {
   .middle-button {
     text-align: center;
     margin-bottom: 20px;
-  } 
+  }
   .middle-gray-bar button {
     width: 100%;
   }
@@ -185,7 +201,7 @@ html, body {
   padding-right: 40px;
 }
 
-/* when modal shows, prevent body from scrolling 
+/* when modal shows, prevent body from scrolling
    http://stackoverflow.com/questions/9538868/prevent-body-from-scrolling-when-a-modal-is-opened
 */
 body.modal-open {
@@ -199,11 +215,11 @@ body.modal-open {
   background-color: white;
 }
 
-.mobile-hint {  
-  display: inline-block; 
+.mobile-hint {
+  display: inline-block;
   margin: 10px auto 10px auto;
   padding: 5px;
-  background-color: rgb(241, 241, 241);  /* dropper value, native RGB */  
+  background-color: rgb(241, 241, 241);  /* dropper value, native RGB */
   font-weight: 400;
 }
 
