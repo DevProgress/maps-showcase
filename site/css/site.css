@@ -69,6 +69,16 @@ html, body {
   text-align: center;
 }
 
+h3#historical-artifact-image-title
+{
+  text-align: left;
+}
+
+p#historical-artifact-data
+{
+  text-align: left;
+}
+
 #col-pattern
 {
   text-align: center;
@@ -77,11 +87,13 @@ html, body {
 #historical-artifact-image
 {
   max-height: 300px;
+  max-width: 100%;
 }
 
 #pattern-image
 {
   max-height: 300px;
+  max-width: 100%;
 }
 
 /* Styles for middle strip of page just below the splash */

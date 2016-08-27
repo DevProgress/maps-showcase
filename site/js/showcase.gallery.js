@@ -4,7 +4,6 @@ d3.json("data/gen/states-data.json", function(error, info) {
   states_data = info;
 });
 
-
 var modalController = (function () {
 
   var modal = document.getElementById('mainModal');
@@ -23,6 +22,7 @@ var modalController = (function () {
   };
 
   var populateStateData = function (state) {
+    document.getElementById('mainModal').setAttribute('data-state-code', state.stateCode);
     document.getElementById('historical-artifact-image').src = 'img/artwork/' + state.stateCode + '/' + modalController.stateIndex + '.jpg';
     // state.historicalArtifactImage;
     document.getElementById('pattern-image').src = 'img/pattern/' + state.stateCode + '/' + modalController.stateIndex + '.png';
