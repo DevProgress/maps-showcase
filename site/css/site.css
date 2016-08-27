@@ -44,10 +44,23 @@ html, body {
   background-color: rgb(195, 195, 186);
   font-family: "SharpUnity";
   font-weight: 100;
+  overflow-x: hidden;
+}
+
+.map-container {
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .modal-body img {
   width: 100%;
+}
+
+.modal-body h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 800;
 }
 
 /* Styles for middle strip of page just below the splash */
@@ -78,12 +91,20 @@ html, body {
 
 .middle-gray-bar button {
   margin-top: 10px;
+}
+
+.btn-danger {
   height: 26px;
   padding-bottom: 25px;
   border-radius: 0;
   font-weight: bold;
   background-color: rgb(209, 44, 43);  /* dropper value, native RGB */
-  color: white;
+  border-color: #e4002b;
+}
+
+.btn-danger:hover {
+  background-color: #781818;
+  border-color: #781818;
 }
 
 @media (max-width: 768px) { /* equivalent to bootstrap min size, without using Less */
@@ -118,16 +139,6 @@ html, body {
   #close-modal-button { display: none; }   /* hide it elsewhere */
 }
 
-.btn-danger {
-  background-color: #e4002b;
-    border-color: #e4002b;
-}
-
-.btn-danger:hover {
-  background-color: #781818;
-  border-color: #781818;
-}
-
 #close-button {
   color: rgb(195, 195, 186);
 }
@@ -154,11 +165,11 @@ html, body {
 }
 
 .bottom-gray-bar .attribution-title {
-  font-size: .8em;
+  font-size: 12px;
 }
 
 .bottom-gray-bar .attribution a {
-  font-size: .8em;
+  font-size: 12px;
   color: black;
   text-decoration: underline;
 }
@@ -180,4 +191,24 @@ html, body {
 body.modal-open {
   overflow: hidden;
   position: fixed;
+}
+
+/* show a hint about zooming on mobile */
+.mobile-hint-container {
+  text-align: center;
+  background-color: white;
+}
+
+.mobile-hint {  
+  display: inline-block; 
+  margin: 10px auto 10px auto;
+  padding: 5px;
+  background-color: rgb(241, 241, 241);  /* dropper value, native RGB */  
+  font-weight: 400;
+}
+
+.mobile-hint .glyphicon {
+  position: relative;
+  top: 2px;
+
 }

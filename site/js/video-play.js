@@ -31,5 +31,5 @@ function showAndPlayVideo() {
   var videoFrame = document.getElementById('video_iframe'); 
   videoFrame.style.display='block'; 
   document.getElementById('overlayImage').style.display='none';
-  document.getElementById('video_iframe').src='https://www.youtube.com/embed/KBLzGTwZbRE?autoplay=1';
+  document.getElementById('video_iframe').src='https://www.youtube.com/embed/KBLzGTwZbRE?autoplay=1&controls=0&showinfo=0&loop=1&playlist=KBLzGTwZbRE';
 }
