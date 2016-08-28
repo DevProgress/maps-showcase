@@ -173,6 +173,7 @@ p#historical-artifact-data
 }
 
 #close-button {
+  cursor:pointer;
   color: rgb(195, 195, 186);
 }
 
