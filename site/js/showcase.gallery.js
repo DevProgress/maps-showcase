@@ -1,6 +1,6 @@
 var states_data;
 
-d3.json("data/gen/states-data.json", function(error, info) {
+d3.json("data/gen/states-data.json?v1", function(error, info) {
   states_data = info;
 });
 
@@ -38,6 +38,7 @@ var modalController = (function () {
   }
 
   var showState = function (stateID) {
+
     modalController.stateIndex = 1;
     modalController.state = states_data[stateID]; // hard code kansas
     modal.style.display = 'block';
@@ -48,29 +49,40 @@ var modalController = (function () {
     populateStateData(modalController.state);
 
     var hasSingleImage = (modalController.state.patternCount <= 1 && modalController.state.artworkCount <= 1);
-    document.getElementById('nextButton').disabled = hasSingleImage;
-    document.getElementById('prevButton').disabled = hasSingleImage;
 
-    // when modal shows, prevent body from scrolling
     document.getElementsByTagName("body")[0].className = "modal-open";
   };
 
   var nextState = function () {
-    modalController.stateIndex += 1;
-    var pastEnd = (modalController.stateIndex > modalController.state.patternCount &&
-                   modalController.stateIndex > modalController.state.artworkCount);
-    if (pastEnd) {
-      modalController.stateIndex = 1;
-    }
-    populateStateData(modalController.state);
+    var stateCode = document.getElementById('mainModal').getAttribute('data-state-code');
+    var currentIndex = getStateIndex(stateCode);
+    var nextIndex = currentIndex + 1;
+    var nextCode = Object.keys(states_data)[nextIndex];
+    if (!nextCode)
+      nextCode = Object.keys(states_data)[0];
+    showState(nextCode);
   }
 
   var previousState = function () {
-    modalController.stateIndex -= 1;
-    if (modalController.stateIndex <= 0) {
-      modalController.stateIndex = Math.max(modalController.state.patternCount, modalController.state.artworkCount);
+    var stateCode = document.getElementById('mainModal').getAttribute('data-state-code');
+    var currentIndex = getStateIndex(stateCode);
+    var prevIndex = currentIndex - 1;
+    var prevCode = Object.keys(states_data)[prevIndex];
+    if (!prevCode)
+      prevCode = Object.keys(states_data)[Object.keys(states_data).length - 1];
+    showState(prevCode);
+  }
+
+  var getStateIndex = function(code){
+    var index = 0;
+    for (var property in states_data) {
+        if (states_data.hasOwnProperty(property)) {
+            if (property === code)
+              return index;
+        }
+        index++;
     }
-    populateStateData(modalController.state);
+    return index;
   }
 
   return {
