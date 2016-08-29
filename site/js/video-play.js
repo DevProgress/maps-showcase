@@ -27,9 +27,10 @@ var videoModalController = (function () {
 
 })();
 
-function showAndPlayVideo() {
+function showAndPlayVideo(video_id) {
   var videoFrame = document.getElementById('video_iframe'); 
   videoFrame.style.display='block'; 
   document.getElementById('overlayImage').style.display='none';
-  document.getElementById('video_iframe').src='https://www.youtube.com/embed/KBLzGTwZbRE?autoplay=1&controls=0&showinfo=0&loop=1&playlist=KBLzGTwZbRE';
+  var video_url = 'https://www.youtube.com/embed/' + video_id + '?autoplay=1&controls=0&showinfo=0&loop=1&playlist=' + video_id;
+  document.getElementById('video_iframe').src = video_url;
 }
