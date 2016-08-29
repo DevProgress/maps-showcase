@@ -73,6 +73,11 @@ html, body {
   border-radius: 15px;
 }
 
+.btn-circle span.glyphicon
+{
+  margin-left: 4px;
+}
+
 
 #btn-join
 {
