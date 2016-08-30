@@ -56,6 +56,10 @@ html, body {
   max-width: 600px;
 }
 
+.modal-dialog {
+  max-width: 600px;
+}
+
 .modal-body h3 {
   margin-top: 10px;
   margin-bottom: 10px;
