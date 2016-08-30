@@ -52,12 +52,32 @@ html, body {
   padding-bottom: 60px;
 }
 
+.modal-dialog {
+  max-width: 600px;
+}
+
 .modal-body h3 {
   margin-top: 10px;
   margin-bottom: 10px;
   font-size: 16px;
   font-weight: 800;
 }
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+
+.btn-circle span.glyphicon
+{
+  margin-left: 4px;
+}
+
 
 #btn-join
 {

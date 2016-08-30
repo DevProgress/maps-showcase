@@ -24,8 +24,8 @@
       <script src='vendor/respond.min.js'></script>
     <![endif]-->
 
-    <link rel="stylesheet" type="text/css" href="css/site.css">
-    <link rel="stylesheet" type="text/css" href="css/map.css">
+    <link rel="stylesheet" type="text/css" href="css/site.css?v=1">
+    <link rel="stylesheet" type="text/css" href="css/map.css?v=1">
 
     <script src='vendor/d3.v3.min.js'></script>
     <script src='vendor/topojson.v1.min.js'></script>
@@ -145,10 +145,19 @@
       <div class='modal-dialog modal-lg' role='document'>
         <div class='modal-content'>
           <div class='modal-header'>
-            <span id='state-title'></span>
-            <a id='close-button' onClick='modalController.hideModal()' class="pull-right">
-                <span class='glyphicon glyphicon-remove'></span>
-            </a>
+            <div class="col-xs-6">
+              <span id='state-title'></span>
+            </div>
+            <div class="col-xs-6 text-right">
+              <button id="nextButton" type="button" class="btn btn-default btn-prev btn-circle" onClick='modalController.previousState()'>
+                <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;</button>
+              <button id="prevButton" type="button" class="btn btn-default btn-next btn-circle" onClick='modalController.nextState()'>
+                <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;
+              </button>
+              <button id="prevButton" type="button" class="btn btn-default btn-next btn-circle" onClick='modalController.hideModal()'>
+                <span class="glyphicon glyphicon-remove"></span>&nbsp;
+              </button>
+            </div>
           </div>
           <div class='modal-body'>
             <div class="row">
@@ -163,15 +172,6 @@
                 <p><a id="download-pdf" href="" type='button' class='btn btn-danger' download>Download</a></p>
               </div>
             </div>
-            <div class="modal-footer">
-            <div class="btn-group" role="group" aria-label="...">
-              <button id="nextButton" type="button" class="btn btn-default btn-prev" onClick='modalController.previousState()'>
-                <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;</button>
-              <button id="prevButton" type="button" class="btn btn-default btn-next" onClick='modalController.nextState()'>
-                <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;
-              </button>
-            </div>
-          </div>
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
       </div>
