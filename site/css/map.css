@@ -5,9 +5,10 @@
 
 .map {
   background-color: white;
-  width: 66.666%;
+  width: 70%;
   position: relative;
   margin: 0 auto;
+
 }
 .map > .map-ol {
   width: 100%;
@@ -16,6 +17,7 @@
   left: 0;
   z-index: 100;
 }
+
 .map-bg img {
   width: 100%;
 }
@@ -27,19 +29,35 @@ svg .state {
   /* stroke: #000000; */
   fill: rgba(255, 255, 255, 0.0);
 }
-svg .usa-border {
+svg .outline {
   stroke: none;
+  fill: none;
 }
 
 .overlay {
   fill: none;
 }
 
-.state:hover {
+/* Hover is on <g> element for multi path states e.g., MI */
+svg g:hover .state {
   stroke: rgb(255, 255, 255);
   cursor: pointer;
   stroke-width: 3;
 }
+#desktop-map {
+  display: none;
+}
+
+@media only screen and (min-width: 1024px) { 
+#desktop-map { display: block; }
+#mobile-map { display: none; }
+}
+/*
+.state:hover {
+  stroke: rgb(255, 255, 255);
+  cursor: pointer;
+  stroke-width: 3;
+}*/
 
 .boundary {
   fill: none;
