@@ -48,9 +48,15 @@ svg g:hover .state {
   display: none;
 }
 
-@media only screen and (min-width: 1024px) { 
+@media only screen and (min-width: 768px) { 
 #desktop-map { display: block; }
 #mobile-map { display: none; }
+}
+
+@media screen and (max-width: 768px) and (min-width: 0px) {
+  .map {
+    width: 100%;
+  }
 }
 /*
 .state:hover {
