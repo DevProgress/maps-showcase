@@ -58,12 +58,16 @@ svg g:hover .state {
     width: 100%;
   }
 }
-/*
-.state:hover {
-  stroke: rgb(255, 255, 255);
-  cursor: pointer;
-  stroke-width: 3;
-}*/
+
+/*prototype tooltip */
+.tooltip {
+  opacity: 1.0;
+}
+.tiptest {
+  position: absolute;
+  top: 30px;
+  left: 100px;
+}
 
 .boundary {
   fill: none;
