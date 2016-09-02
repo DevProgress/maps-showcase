@@ -1,36 +1,33 @@
-var videoModalController = (function () {
-  var modal = document.getElementById('videoModal');
-  var background = document.getElementById('videoModalBackdrop');
+var TAG_ID = 'player';
 
-  var hideModal = function () {
-    modal.className = 'modal fade';
-    background.className = 'modal-backdrop fade';
-    selectedStateIdx = null;
-    document.getElementsByTagName('video')[0].pause();
+var videoId = document.getElementById(TAG_ID).getAttribute('data-video-id');
+var tag = document.createElement('script');
 
-    setTimeout(function () {
-      modal.style.display = 'none';
-    }, 250); //long enough for animation to wrap up
-  };
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-  var playVideo = function () {
-    document.getElementById('overlayImage').style.display = 'none';
-    document.getElementsByTagName('video')[0].style.display = 'block';
-    document.getElementsByTagName('video')[0].play();
-  };
-
-
-  return {
-    hideModal: hideModal,
-    playVideo: playVideo
-  }
-
-})();
-
-function showAndPlayVideo(video_id) {
-  var videoFrame = document.getElementById('video_iframe'); 
-  videoFrame.style.display='block'; 
-  document.getElementById('overlayImage').style.display='none';
-  var video_url = 'https://www.youtube.com/embed/' + video_id + '?autoplay=1&controls=0&showinfo=0&loop=1&playlist=' + video_id;
-  document.getElementById('video_iframe').src = video_url;
+function onYouTubeIframeAPIReady() {
+  new YT.Player(TAG_ID, {
+    height: '390',
+    width: '640',
+    videoId: videoId,
+    events: {
+      'onReady': function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+    },
+    playerVars: {
+      autoplay: 1,
+      controls: 0,
+      disablekb: 1,
+      fs: 0,
+      loop: 1,
+      modestbranding: 1,
+      playlist: videoId, // required for looping
+      playsinline: 1,
+      rel: 0,
+      showinfo: 0
+    }
+  });
 }
