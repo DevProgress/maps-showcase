@@ -440,11 +440,10 @@ x///////////////////////x   http://DevProgress.us
       var mapDiv = document.getElementById('map');
       hammerIt(mapDiv)
 
-      // add click listeners to states
-      var elts = document.getElementsByTagName('g');
-      for (var i = elts.length - 1; i >= 0; --i) {
-        elts[i].onclick = function() { modalController.showState(this.id); }
-      }
+      $('#map-states > g').click(function(){
+        var id = $(this).attr('id');
+        modalController.showState(id);
+      });
 
     });
     </script>

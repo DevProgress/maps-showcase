@@ -22,6 +22,7 @@ var modalController = (function () {
   };
 
   var populateStateData = function (state) {
+
     document.getElementById('mainModal').setAttribute('data-state-code', state.stateCode);
     document.getElementById('historical-artifact-image').src = 'img/artwork/' + state.stateCode + '/' + modalController.stateIndex + '.jpg';
     // state.historicalArtifactImage;
@@ -38,7 +39,6 @@ var modalController = (function () {
   }
 
   var showState = function (stateID) {
-
     modalController.stateIndex = 1;
     modalController.state = states_data[stateID]; // hard code kansas
     modal.style.display = 'block';
