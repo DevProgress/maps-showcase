@@ -1,34 +1,37 @@
 /* Styles for the video page */
 
-#overlayImage {
-  cursor: pointer;
-  width: 100%;
-}
-
 /* responsive youtube view
-   https://www.h3xed.com/web-development/how-to-make-a-responsive-100-width-youtube-iframe-embed */
-.video-container {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 56.25%;
+ * https://www.h3xed.com/web-development/how-to-make-a-responsive-100-width-youtube-iframe-embed
+ */
+
+.video-container.white {
+  background-color: white;
 }
 
-.video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.video-container.black {
+  background-color: black;
 }
 
-/* the play icon over the main popover image  */
-.centered-icon {
-  font-size: 50px;
-  color: white;
+.video-container > div {
   position: relative;
-  top: -90px;
-  left: 50%;
-  margin-left: -25px; /* half icon's width */
-  cursor: pointer;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  margin: 0 auto;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 770px) {
+  .video-container > div {
+    /* keep width:padding-bottom at a 16:9 ratio */
+    width: 75%;
+    padding-bottom: 42.25%;
+  }
 }

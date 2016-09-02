@@ -1,4 +1,26 @@
 <!DOCTYPE html>
+<!--
+ ____             ____
+|  _ \  _____   _|  _ \ _ __ ___   __ _ _ __ ___  ___ ___  _   _ ___
+| | | |/ _ \ \ / / |_) | '__/ _ \ / _` | '__/ _ \/ __/ __|| | | / __|
+| |_| |  __/\ V /|  __/| | | (_) | (_| | | |  __/\__ \__ \| |_| \__ \
+|____/ \___| \_/ |_|   |_|  \___/ \__, |_|  \___||___/___(_)__,_|___/
+                                  |___/
+ xxxxxxxxxxxxxxxxxxxxxxx
+x                     //x
+x   xxxxxxxxxxxxxxxxx///x   We are volunteers using our skills and expertise
+x  x                 x//x   to create tech tools to help elect Hillary
+x  x                 x//x   Clinton and other Democratic and progressive
+x  x     .           x//x   candidates. We are coders, designers, leaders,
+x  x  __.'.__        x//x   writers, mentors, and researchers. Each project
+x  x '-.   .-'       x//x   we work on focuses on an app, service, data
+x  x   /.'.\         x//x   resource, or other technology to advance the
+x  x   '   '         x//x   cause. We are a team — join us!
+x   xxxxxxxxxxxxxxxxx///x
+x///////////////////////x   http://DevProgress.us
+ xxxxxxxxxxxxxxxxxxxxxxx
+
+-->
 
   <head>
     <!-- This header content from https://getbootstrap.com/examples/grid/ -->
@@ -32,13 +54,10 @@
   <body>
     <div class='container-fluid'>
       <div class='row'>
-        <div class="outer-video-container">
-          <div class="video-container" onclick="showAndPlayVideo('KBLzGTwZbRE')">
-            <img id="overlayImage" src="img/static-women-video-cover.png" title='Click to play the video.' />
-            <span class="glyphicon glyphicon-play-circle centered-icon"></span>
-            <iframe id="video_iframe" style="display: none;" id=video_iframe class="video" frameborder="0" allowfullscreen></iframe>
+        <div class="video-container black">
+          <div>
+            <div id="player" data-video-id="KBLzGTwZbRE"></div>
           </div>
-
         </div>
       </div>
 
@@ -68,15 +87,20 @@
             About the project:
           </div>
           <div class='bottom-paragraph'>
-            Holzer’s piece celebrates Hillary Clinton’s decades-long work to advance the rights of women and girls the world. Passages from past speeches are cast across the White House as a testament to Hillary’s work—and the milestone her presidency would represent in for gender equality. 
+            Holzer’s piece celebrates Hillary Clinton’s decades-long work to advance the rights of women and girls the world. Passages from past speeches are cast across the White House as a testament to Hillary’s work—and the milestone her presidency would represent in for gender equality.
           </div>
         </div>
         <div class='col-sm-12 padded-left'>
+          <!--
           <div class='bottom-title attribution-title'>
-            Paid for by Hillary for America
+              Built by <a target='_blank' href='http://DevProgress.us'>DevProgress.us</a><br/>
+          </div>
+          -->
+          <div class='bottom-title attribution-title'>
+              Paid for by Hillary for America
           </div>
           <div class='attribution'>
-            <a href=#>Terms of Service</a> &amp; <a href=#>Privacy Policy</a>
+            <a target='_blank' href='https://www.hillaryclinton.com/page/terms-of-service/'>Terms of Service</a> &amp; <a target='_blank' href='https://www.hillaryclinton.com/page/privacy-policy/'>Privacy Policy</a>
           </div>
         </div>
       </div>

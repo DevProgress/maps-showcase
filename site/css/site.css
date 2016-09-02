@@ -149,11 +149,14 @@ p#historical-artifact-data
 .middle-gray-bar button {
   margin-top: 10px;
 }
-
+.btn {
+  padding-top: 9px;
+  padding-bottom: 9px;
+  -webkit-border-radius: 3px; 
+  -moz-border-radius: 3px; 
+  border-radius: 3px; 
+}
 .btn-danger {
-  height: 26px;
-  padding-bottom: 25px;
-  border-radius: 0;
   font-weight: bold;
   background-color: rgb(209, 44, 43);  /* dropper value, native RGB */
   border-color: #e4002b;
