@@ -96,7 +96,7 @@
     "artworkCount": 0
   },
   "LA": {
-    "description": "Sugar Strike Louisiana. The Knights of Labor presented a list of demands to the Louisiana Sugar Planters Association on behalf of the sugar cane workers.  The Knights at that time did not exclude women or blacks and accepted workers of all skill levels. They are considered a predecessor of the Industrial Workers of the World.",
+    "description": "Sugar Strike Louisiana. The Knights of Labor presented a list of demands to the Louisiana Sugar Planters Association on behalf of the sugar cane workers. The Knights at that time did not exclude women or blacks and accepted workers of all skill levels. They are considered a predecessor of the Industrial Workers of the World.",
     "patternCount": 1,
     "title": 1887,
     "stateName": "Louisiana",
@@ -232,7 +232,7 @@
     "artworkCount": 1
   },
   "IN": {
-    "description": "Virginia Claypool Meredith (1848-1936) earned the title “Queen of American Agriculture” in Indiana. She farmed in Cambridge City and was one of the first women to show livestock to speak about crop and livestock production. This motif is sampled from Sarah Jenkins, an 11 year old in 1800s Indiana.",
+    "description": "Virginia Claypool Meredith (1848-1936) earned the title “Queen of American Agriculture” in Indiana. She farmed in Cambridge City and was one of the first women to show livestock to speak about crop and livestock production. This motif is sampled from Sarah Jenkins, an 11-year-old in 1800s Indiana.",
     "patternCount": 1,
     "title": 1882,
     "stateName": "Indiana",
@@ -240,7 +240,7 @@
     "artworkCount": 1
   },
   "IA": {
-    "description": "AFSCME Iowa Council 61 scores a $1.3 million win for AFSCME state employees victimized by sex-based pay discrimination.",
+    "description": "American Federation of State, County and Municipal Employees (AFSCME) for Iowa Council 61 gains a $1.3 million win for AFSCME state employees victimized by sex-based pay discrimination.",
     "patternCount": 1,
     "title": 1988,
     "stateName": "Iowa",
@@ -248,9 +248,9 @@
     "artworkCount": 2
   },
   "MA": {
-    "description": "Lowell mill girls organized for 10 hour workday campaign.",
+    "description": "Lowell Female Labor Reform Association. Lowell mill girls organized for 10 hour workday in Massachusetts.",
     "patternCount": 1,
-    "title": "Lowell Female Labor Reform Association.",
+    "title": 1844,
     "stateName": "Massachusetts",
     "stateCode": "MA",
     "artworkCount": 1
@@ -272,7 +272,7 @@
     "artworkCount": 1
   },
   "ME": {
-    "description": "Women shoe stitchers from six states form the first national women’s labor organization: the Daughters of St. Crispin.",
+    "description": "Women shoe stitchers from six states form the first national women’s labor organization, the Daughters of St. Crispin.",
     "patternCount": 1,
     "title": 1869,
     "stateName": "Maine",
@@ -320,7 +320,7 @@
     "artworkCount": 1
   },
   "MN": {
-    "description": "Training schools for teachers open in Winona, Mankato, St. Cloud. For the first time, women are allowed to train for profession outside home",
+    "description": "Training schools for teachers open in Winona, Mankato, and St. Cloud. For the first time, women are allowed to train for profession outside home.",
     "patternCount": 1,
     "title": 1860,
     "stateName": "Minnesota",
@@ -328,7 +328,7 @@
     "artworkCount": 1
   },
   "MI": {
-    "description": "150 “sales girls” stopped working and stood proudly with their arms folded. The sit-down strike against the USA’s most unpopular chain store had begun.",
+    "description": "Woolworth's workers in Detroit Michigan hold a sit-down strike and demand union recognition, a 10 cent per hour raise, an 8 hour workday, 50 cent lunches for the food counter workers, hiring of new workers only through a union hiring hall, and no retaliation."
     "patternCount": 1,
     "title": 1937,
     "stateName": "Michigan",
@@ -344,7 +344,7 @@
     "artworkCount": 1
   },
   "KS": {
-    "description": "Mary Lease delivered speeches on behalf of Kansas farmers revolting against high railroad rates  and morgage interest rates. She believed big business made Americans into \"wage slaves\" and critiqued Wall Street.This motif was based on a Kansas quilt made made by Amanda Lewis or her daughter, Mary Jane Exoduster. Amanda first came to Kansas with her husband and children during the 1880s, settling near Concordia. She had lived as a slave in Kentucky before the Civil War.",
+    "description": "Mary Lease delivered speeches on behalf of Kansas farmers revolting against high railroad rates and morgage interest rates. She believed big business made Americans into \"wage slaves\" and critiqued Wall Street. This motif was based on a Kansas quilt made made by Amanda Lewis or her daughter, Mary Jane Exoduster. Amanda first came to Kansas with her husband and children during the 1880s, settling near Concordia. She had lived as a slave in Kentucky before the Civil War.",
     "patternCount": 1,
     "title": 1890,
     "stateName": "Kansas",
@@ -376,9 +376,9 @@
     "artworkCount": 1
   },
   "KY": {
-    "description": "‘Florence Reece, a shy, towheaded Kentucky miner's daughter, composed this song at the age of 12 when her father was out on strike. She sang it me standing in front of the primitive hearth of a log cabin in the backwoods of Kentucky in 1937 and it has since become a national union song.’",
+    "description": "Florence Reece writes the miner song “Which Side Are You On” as a young girl during the Harlan County strike in Kentucky.",
     "patternCount": 1,
-    "title": "Florence Reece, “which side are you on”, 1931 miner song",
+    "title": 1931,
     "stateName": "Kentucky",
     "stateCode": "KY",
     "artworkCount": 1
