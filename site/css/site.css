@@ -67,27 +67,6 @@ html, body {
   font-weight: 800;
 }
 
-.btn-circle {
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  padding: 6px 0;
-  font-size: 12px;
-  line-height: 1.428571429;
-  border-radius: 15px;
-}
-
-.btn-circle span.glyphicon
-{
-  margin-left: 4px;
-}
-
-
-#btn-join
-{
-  margin-top: 10px;
-}
-
 #col-artwork
 {
   text-align: center;
@@ -152,9 +131,9 @@ p#historical-artifact-data
 .btn {
   padding-top: 9px;
   padding-bottom: 9px;
-  -webkit-border-radius: 3px; 
-  -moz-border-radius: 3px; 
-  border-radius: 3px; 
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
 .btn-danger {
   font-weight: bold;
@@ -165,6 +144,26 @@ p#historical-artifact-data
 .btn-danger:hover {
   background-color: #781818;
   border-color: #781818;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+
+.btn-circle span.glyphicon
+{
+  margin-left: 4px;
+}
+
+#btn-join
+{
+  margin-top: 10px;
 }
 
 @media (max-width: 768px) { /* equivalent to bootstrap min size, without using Less */
