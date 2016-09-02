@@ -39,16 +39,29 @@ svg .outline {
 }
 
 /* Hover is on <g> element for multi path states e.g., MI */
-svg g:hover .state {
+svg g g:hover .state {
   stroke: rgb(255, 255, 255);
   cursor: pointer;
   stroke-width: 3;
 }
+
+svg g#map-states g.active .state {
+  stroke: rgb(255, 255, 255);
+  cursor: pointer;
+  stroke-width: 3;
+}
+
+svg g.mini-state-bubbles g.active rect
+{
+  stroke: rgb(255, 255, 255);
+  stroke-width: 3;
+}
+
 #desktop-map {
   display: none;
 }
 
-@media only screen and (min-width: 768px) { 
+@media only screen and (min-width: 768px) {
 #desktop-map { display: block; }
 #mobile-map { display: none; }
 }
@@ -72,3 +85,53 @@ svg g:hover .state {
   stroke-linecap: round;
   vector-effect: non-scaling-stroke;
 }
+
+
+g.mini-state-bubbles
+{
+  transform: translate(760px,700px);
+  -ms-transform: translate(760px,700px); /* IE 9 */
+  -webkit-transform: translate(760px,700px); /* Safari and Chrome */
+  -o-transform: translate(760px,700px); /* Opera */
+  -moz-transform: translate(760px,700px); /* Firefox */
+}
+
+g.mini-state-bubble rect
+{
+  width: 50px;
+  height: 50px;
+  fill: green;
+  stroke: rgb(44, 31, 55);
+  stroke-width: 3;
+  cursor: pointer;
+}
+
+g.mini-state-bubble text
+{
+  transform: translate(10px,30px);
+  -ms-transform: translate(10px,30px); /* IE 9 */
+  -webkit-transform: translate(10px,30px); /* Safari and Chrome */
+  -o-transform: translate(10px,30px); /* Opera */
+  -moz-transform: translate(10px,30px); /* Firefox */
+  fill: black;
+  font-size: 19px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+g.mini-state-bubble.state-nh rect { fill: rgb(78,77,73); }
+g.mini-state-bubble.state-nh text { fill: rgb(225,212,76); }
+g.mini-state-bubble.state-ri rect { fill: rgb(128,121,116); }
+g.mini-state-bubble.state-ri text { fill: rgb(225,212,76); }
+g.mini-state-bubble.state-nj rect { fill: rgb(177,177,181); }
+g.mini-state-bubble.state-nj text { fill: rgb(188,28,38); }
+g.mini-state-bubble.state-md rect { fill: rgb(15,156,73); }
+g.mini-state-bubble.state-md text { fill: rgb(82,96,79); }
+g.mini-state-bubble.state-vt rect { fill: rgb(188,28,38); }
+g.mini-state-bubble.state-vt text { fill: rgb(177,177,181); }
+g.mini-state-bubble.state-ma rect { fill: rgb(225,212,76); }
+g.mini-state-bubble.state-ma text { fill: rgb(78,77,73); }
+g.mini-state-bubble.state-ct rect { fill: rgb(61,41,105); }
+g.mini-state-bubble.state-ct text { fill: rgb(225,64,5); }
+g.mini-state-bubble.state-de rect { fill: rgb(2,159,215); }
+g.mini-state-bubble.state-de text { fill: rgb(103,102,98); }
