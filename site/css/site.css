@@ -54,6 +54,8 @@ html, body {
 
 .modal-dialog {
   max-width: 600px;
+  -webkit-overflow-scrolling: auto !important;
+  overflow-y: auto !important;
 }
 
 .modal-dialog {
