@@ -8,6 +8,20 @@ var modalController = (function () {
 
   var modal = document.getElementById('mainModal');
   var background = document.getElementById('modalBackdrop');
+  
+  var initialize = function () {
+    var imageLoaded = function () {
+      // Hack around a bug in iOS Safari where a height change doesn't
+      // automatically recalculate the scrollable height.
+      // <https://bugs.webkit.org/show_bug.cgi?id=150974>
+      document.getElementById('mainModal').style.overflowY = 'hidden';
+      setTimeout(function () {
+        document.getElementById('mainModal').style.overflowY = '';
+      }, 10);
+    };
+    document.getElementById('pattern-image').addEventListener('load', imageLoaded);
+    document.getElementById('historical-artifact-image').addEventListener('load', imageLoaded);
+  };
 
   var hideModal = function () {
     modal.className = 'modal fade';
@@ -86,6 +100,7 @@ var modalController = (function () {
   }
 
   return {
+    initialize: initialize,
     showState: showState,
     hideModal: hideModal,
     nextState: nextState,
